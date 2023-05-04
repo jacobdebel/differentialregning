@@ -1,0 +1,3 @@
+Dette er en præsentation om differentialregning, som går lidt mere i dybden end den første introduktion.
+
+Find præsentationen på [[https://jacobdebel.github.io/differentialregning]].

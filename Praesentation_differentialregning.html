@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8"/>
+<title>Differentialregning for let øvede</title>
+<meta name="author" content="Vibenshus Gymnasium"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/sky.css" id="theme"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h2>Differentialregning for let øvede</h2><h3>Matematik A</h3><h4>Vibenshus Gymnasium</h4><h4></h4>
+</section>
+
+
+<section>
+<section id="slide-orgaafd213" data-background="">
+<h2 id="orgaafd213">Grænseværdier</h2>
+<div class="outline-text-2" id="text-orgaafd213">
+</div>
+</section>
+<section id="slide-orgddc3ae2" data-background="">
+<h3 id="orgddc3ae2">Arealet af en cirkel?</h3>
+<p>
+\[A=\pi \cdot r^2\]
+</p>
+
+
+<div id="orge1f04f3" class="figure">
+<p><img src="img/2020-09-07_08-31-26_screenshot.png" alt="2020-09-07_08-31-26_screenshot.png" width="400px" />
+</p>
+</div>
+</section>
+<section id="slide-org50a4a30" data-background="">
+<h3 id="org50a4a30">Approksimeret som trekanter</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Arealet af en trekant
+</p>
+
+<p>
+\[A = \frac{1}{2} \cdot a \cdot b \cdot \sin \left( C \right)\]
+</p>
+
+<p class="fragment (appear)">
+Arealet af 8 trekanter
+\[A = 8 \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{8} \right)\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+
+<div id="org6a99be3" class="figure">
+<p><img src="img/2020-09-07_08-36-04_screenshot.png" alt="2020-09-07_08-36-04_screenshot.png" width="600px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-org2a2ed56" data-background="">
+<h3 id="org2a2ed56">Approksimeret som trekanter</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Eller 16 trekanter
+\[A = 16 \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{16} \right)\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+
+<div id="org1870425" class="figure">
+<p><img src="img/2020-09-07_08-43-37_screenshot.png" alt="2020-09-07_08-43-37_screenshot.png" width="600px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-orgb677583" data-background="">
+<h3 id="orgb677583">Approksimeret som trekanter</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Eller \(n\) trekanter
+\[A = n \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right)\]
+</p>
+<p class="fragment (appear)">
+Hvad sker der, når \(n \to \infty\)?
+</p>
+<p class="fragment (appear)">
+\[\boxed{A =  \lim_{n\to \infty} \left(n \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right)\right)}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org136424a" class="figure">
+<p><img src="img/2020-09-07_08-43-37_screenshot.png" alt="2020-09-07_08-43-37_screenshot.png" width="600px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-orgea73fa4" data-background="">
+<h3 id="orgea73fa4">Was bedeutet das?</h3>
+<div style="font-size: 60%;">
+<p>
+\[\boxed{A =  \lim_{n\to \infty} \left(n \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right)\right)}\]
+</p>
+<ul>
+<li>\(\lim\) betyder <i>grænse</i>. Fra latin <i>limes</i>. (Engelsk limit).</li>
+<li>\(n \to \infty\) udtales "n" går mod uendeligt.</li>
+<li>\(\lim_{n \to \infty}\) udtales: "grænseværdien når n går mod uendeligt".</li>
+
+</ul>
+
+</section>
+<section id="slide-orga005ee3" data-background="">
+<h3 id="orga005ee3">Regneregler for grænseværdier</h3>
+<div style="font-size: 60%;">
+<div>
+\begin{align*}
+\lim_{x \to a} \left(k\right) &= k \\
+\lim_{x \to a} \left(x\right) &= a \\
+\lim_{x \to a} \left(k\cdot f(x)\right) &= k \cdot \lim_{x \to a} \left(f(x)  \right) \\
+\lim_{x \to a} \left( f(x) \pm g(x) \right) &= \lim_{x \to a} \left( f(x) \right) \pm \lim_{x \to a} \left( g(x) \right) \\
+\lim_{x \to a} \left( f(x) \cdot g(x) \right) &= \lim_{x \to a} \left( f(x) \right) \cdot \lim_{x \to a} \left( g(x) \right) \\
+\lim_{x \to a} \left( \frac{f(x)}{g(x)} \right) &= \frac{\lim_{x \to a}\left( f(x) \right)}{\lim_{x \to a}\left( g(x) \right)} \quad , \quad \lim_{x \to a} \left( g(x) \right) \neq 0
+\end{align*}
+
+</div>
+
+</section>
+<section id="slide-org58185a2" data-background="">
+<h3 id="org58185a2">Opgaver</h3>
+<div style="font-size: 60%;">
+<p>
+Bestem følgende grænseværdier
+</p>
+<div class="column" style="float:left; width: 50%">
+
+<ol>
+<li>\(\lim_{x \to a} 4 =\)</li>
+<li>\(\lim_{x \to 12} x+1 =\)</li>
+<li>\(\lim_{x \to -1} \frac{x+1}{x} =\)</li>
+<li>\(\lim_{x \to 0^+} \frac{x+1}{x} =\)</li>
+<li>\(\lim_{x \to -\infty} \frac{x+1}{x} =\)</li>
+
+</ol>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<ol>
+<li value="6">\(\lim_{x \to 2} \frac{x^3 -8}{2 x^2-x-6}=\)</li>
+<li>\(\lim_{x \to 1^+} \frac{x^3 -x}{x^{-1}-1}=\)</li>
+<li>\(\lim_{x \to \pi} \cos \left( x \right)=\)</li>
+<li>\(\lim_{x \to \pi} \cos \left( x -\pi\right)=\)</li>
+<li>\(\lim_{x \to \pi} \cos \left( x +\sin(x)\right)=\)</li>
+<li>\(\lim_{x \to \pi} \cos \left( x \cdot \cos(x)\right)=\)</li>
+
+</ol>
+</div>
+
+</section>
+<section id="slide-orgdc5a41a" data-background="">
+<h3 id="orgdc5a41a">Tilbage til cirklen</h3>
+<div style="font-size: 60%;">
+
+
+<div id="org68ae6b4" class="figure">
+<p><img src="img/2020-09-07_08-43-37_screenshot.png" alt="2020-09-07_08-43-37_screenshot.png" width="400px" />
+</p>
+</div>
+
+<p>
+\[\boxed{A =  \lim_{n\to \infty} \left(n \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right)\right)}\]
+</p>
+
+</section>
+<section id="slide-org6eaef6f" data-background="">
+<h3 id="org6eaef6f">Tilbage til cirklen</h3>
+<div style="font-size: 60%;">
+<p>
+\[A =  \lim_{n\to \infty} \left(n \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right)\right)\]
+</p>
+<p class="fragment (appear)">
+\(\frac{1}{2}\) og \(r^2\) er ikke afhængig af \(n\)
+</p>
+<p class="fragment (appear)">
+\[A = \frac{1}{2}\cdot r^2 \lim_{n\to \infty} \left(n \cdot \sin \left( \frac{2 \pi}{n} \right)\right)\]
+</p>
+<p class="fragment (appear)">
+Nu mangler vi blot at vise, at den viste grænseværdi er lig \(2 \pi\).
+</p>
+<p class="fragment (appear)">
+Naivt forsøg
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+\lim_{n \to \infty} \left( n \cdot \sin \left( \frac{2 \pi}{n} \right)\right) &= \lim_{n \to \infty} \left( n \right)\cdot \lim_{n \to \infty} \left( \sin \left( \frac{2\pi}{n} \right) \right) \\
+&= \infty \cdot 0
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+<b>Hmm&#x2026; Vi må prøve noget andet</b>
+</p>
+
+</section>
+<section id="slide-org26c5168" data-background="">
+<h3 id="org26c5168">Noget andet</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p class="fragment (appear)">
+\[\lim_{n \to \infty} \left( n \cdot \sin \left( \frac{2 \pi}{n} \right) \right)\]
+</p>
+<p class="fragment (appear)">
+Argumentet til sinus er jo bare en vinkel
+</p>
+<p class="fragment (appear)">
+\[\phi = \frac{2 \pi}{n}\]
+</p>
+<p class="fragment (appear)">
+og af dette fås
+</p>
+<p class="fragment (appear)">
+\[n = \frac{2 \pi}{\phi}\]
+</p>
+<p class="fragment (appear)">
+Det kan jo indsættes i stedet for&#x2026;
+</p>
+<p class="fragment (appear)">
+\[\lim_{n \to \infty} \left( \frac{2 \pi}{\phi} \cdot \sin \left(\phi \right) \right)\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p class="fragment (appear)">
+Men hov&#x2026; Hvad med grænseværdien? Der er jo ikke noget \(n\) længere.
+</p>
+<p class="fragment (appear)">
+\[\lim_{n \to \infty} \left( \phi \right) = \lim_{n \to \infty} \left( \frac{2 \pi}{n} \right) = 0\]
+</p>
+<p class="fragment (appear)">
+Ahh, i stedet for \(\lim_{n \to \infty}\) skrives \(\lim_{\phi \to 0}\)
+</p>
+<p class="fragment (appear)">
+\[\lim_{n \to \infty} \left( n \cdot \sin \left( \frac{2 \pi}{n} \right) \right) = \lim_{\phi \to 0} \left( \frac{2 \pi}{\phi} \cdot \sin \left( \phi \right) \right)\]
+</p>
+</div>
+
+</section>
+<section id="slide-orgad2d399" data-background="">
+<h3 id="orgad2d399">Noget andet</h3>
+<div style="font-size: 60%;">
+<p>
+\[\lim_{\phi \to 0} \left( \frac{2 \pi}{\phi}\cdot \sin \left( \phi \right) \right) = 2 \pi \cdot \lim_{\phi \to 0} \left( \frac{\sin \left( \phi \right)}{\phi} \right)\]
+</p>
+<p class="fragment (appear)">
+Vi skal altså nu "bare" vise at \(\lim_{\phi \to 0} \left( \frac{\sin \left( \phi \right)}{\phi} \right) = 1\)
+</p>
+<p class="fragment (appear)">
+<b>TRYLLE, TRYLLE, TRYLLE</b>
+</p>
+<div class="org-src-container">
+
+<pre class="fragment (appear)">tex(float('limit(sin(x)/x,x,0)=limit(sin(x)/x,x,0)));
+</pre>
+</div>
+<p class="fragment (appear)">
+\[\lim_{x\rightarrow 0.0}{{{\sin x}\over{x}}}=1.0\]
+</p>
+<p class="fragment (appear)">
+Brug af CAS-værktøj (Maxima)
+</p>
+
+</section>
+<section id="slide-org7068d3d" data-background="">
+<h3 id="org7068d3d"><del>TRYLLE, TRYLLE, TRYLLE</del></h3>
+<div style="font-size: 60%;">
+<p class="fragment (appear)">
+Nej ikke flere tryllerier i denne omgang.
+</p>
+<p class="fragment (appear)">
+Vi må undersøge grænseværdien på en anden måde.
+</p>
+<p class="fragment (appear)">
+<b>Vi kan bruge L'Hôpitals regler.</b>
+</p>
+
+</section>
+<section id="slide-orga5e7999" data-background="">
+<h3 id="orga5e7999">L'Hôpitals regler</h3>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+<b>"0/0"-reglen</b>
+</p>
+
+<p>
+Det antages at \(\lim_{x \to a} \left( f(x) \right) = \lim_{x \to a} \left( g(x) \right) = 0\)
+og at grænseværdien 
+\[\lim_{x \to a} \frac{f'(x)}{g'(x)}\]
+eksisterer. Da gælder
+\[\boxed{\lim_{x \to a} \left( \frac{f(x)}{g(x)} \right)=\lim_{x \to a} \left( \frac{f'(x)}{g'(x)} \right)}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+<b>"\(\infty/\infty\)"-reglen</b>
+</p>
+
+<p>
+Det antages at \(\lim_{x \to a} \left( f(x) \right) = \lim_{x \to a} \left( g(x) \right) = \pm\infty\)
+og at grænseværdien 
+\[\lim_{x \to a} \frac{f'(x)}{g'(x)}\]
+eksisterer. Da gælder
+\[\boxed{\lim_{x \to a} \left( \frac{f(x)}{g(x)} \right)=\lim_{x \to a} \left( \frac{f'(x)}{g'(x)} \right)}\]
+</p>
+
+</div>
+
+</section>
+<section id="slide-orgddbee1e" data-background="">
+<h3 id="orgddbee1e">Opgaver</h3>
+<div style="font-size: 60%;">
+<p>
+Brug L'Hôpitals regler til at bestemme følgende grænseværdier:
+</p>
+<div class="column" style="float:left; width: 50%">
+<ol>
+<li>\(\lim_{x \to 0} \left( \frac{\sin \left( 2 x \right)}{x} \right)\)</li>
+
+<li>\(\lim_{x \to \frac{\pi}{2}} \left( \frac{\cos \left( x \right)}{\frac{\pi}{2}-x} \right)\)</li>
+
+<li>\(\lim_{x \to 0} \left( \frac{e^x-1}{x} \right)\)</li>
+
+</ol>
+
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<ol>
+<li value="4">\(\lim_{x\to \infty} \left( \frac{x^2+x}{3 x^2+2} \right)\)</li>
+<li>\(\lim_{x \to 1}\left( \frac{\ln \left( x \right)}{\sin \left( x-1 \right)} \right)\)</li>
+<li>\(\lim_{x \to 0} \left( \frac{1 - \cos \left( x \right)}{x^3} \right)\)</li>
+
+</ol>
+</div>
+
+</section>
+<section id="slide-orgfecc249" data-background="">
+<h3 id="orgfecc249">Noget andet&#x2026; igen</h3>
+<div style="font-size: 60%;">
+<p>
+\[\lim_{\phi \to 0} \left( \frac{2 \pi}{\phi}\cdot \sin \left( \phi \right) \right) = 2 \pi \cdot \lim_{\phi \to 0} \left( \frac{\sin \left( \phi \right)}{\phi} \right)\]
+</p>
+<p class="fragment (appear)">
+Lad os bare se nærmere på grænseværdien. Den skal bare give 1, så er vi glade&#x2026;
+</p>
+<p class="fragment (appear)">
+\[\lim_{\phi \to 0} \left( \frac{\sin \left( \phi \right)}{\phi} \right) = \frac{\lim_{\phi \to 0}\left( \sin \left( \phi \right) \right)}{\lim_{\phi \to 0}\left( \phi \right)} = \frac{0}{0}\]
+</p>
+<p class="fragment (appear)">
+Vi kan altså bruge L'Hôpitals 0/0-regel
+</p>
+<p class="fragment (appear)">
+\[\frac{\lim_{\phi \to 0}\left( \sin \left( \phi \right) \right)}{\lim_{\phi \to 0}\left( \phi \right)} = \frac{\lim_{\phi \to 0}\left( \frac{d}{d \phi} \left(\sin \left( \phi \right)\right) \right)}{\lim_{\phi \to 0}\left( \frac{d}{d \phi} \left(\phi\right) \right)} = \frac{\lim_{\phi \to 0}\left( \cos \left( \phi \right) \right)}{\lim_{\phi \to 0}\left( 1 \right)} = \frac{1}{1} = 1\]
+</p>
+<p class="fragment (appear)">
+<b>HURRA, det virker&#x2026; Men det er også lidt snyd. Vi kan jo i princippet ikke <i>differentiere</i> endnu&#x2026;</b>
+</p>
+
+</section>
+<section id="slide-org7be4a02" data-background="">
+<h3 id="org7be4a02">Noget andet andet</h3>
+<div style="font-size: 60%;">
+<p>
+Vi må hellere tage et geometrisk/trigonometrisk bevis i stedet for&#x2026;
+</p>
+
+</section>
+<section id="slide-org4d5deda" data-background="">
+<h3 id="org4d5deda">Tadaa! - Khan academy to the rescue</h3>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/5xitzTutKqM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</section>
+<section id="slide-org1fc02c9" data-background="">
+<h3 id="org1fc02c9">Endelig - arealet af en cirkel</h3>
+<div style="font-size: 40%;">
+<div class="column" style="float:left; width: 70%">
+<p class="fragment (appear)">
+\[A = \lim_{n \to \infty} \left( n \cdot \frac{1}{2}\cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right) \right)\]
+</p>
+<p class="fragment (appear)">
+\[A = \frac{1}{2}\cdot r^2 \cdot \lim_{n \to \infty} \left( n \cdot \sin \left( \frac{2 \pi}{n} \right) \right)\]
+</p>
+<p class="fragment (appear)">
+\[A=\frac{1}{2}\cdot r^2 \cdot \lim_{\phi \to 0} \left( \frac{2 \pi}{\phi}\cdot \sin \left( \phi \right) \right)\quad for \quad \phi = \frac{2 \pi}{n}\]
+</p>
+<p class="fragment (appear)">
+\[A = \frac{1}{2}\cdot r^2 \cdot 2 \pi \cdot \lim_{\phi \to 0} \left( \frac{\sin \left( \phi \right)}{\phi} \right)\]
+</p>
+<p class="fragment (appear)">
+\[ A = \frac{1}{2}\cdot r^2\cdot 2 \pi \cdot 1\]
+</p>
+<p class="fragment (appear)">
+\[\boxed{A = \pi \cdot r^2}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 30%">
+
+<div id="org1f78415" class="figure">
+<p><img src="img/2020-09-07_08-43-37_screenshot.png" alt="2020-09-07_08-43-37_screenshot.png" width="400px" />
+</p>
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org27607ab" data-background="">
+<h2 id="org27607ab">Kontinuitet</h2>
+<div class="outline-text-2" id="text-org27607ab">
+</div>
+</section>
+<section id="slide-orga0a390f" data-background="">
+<h3 id="orga0a390f">Kontinuitet</h3>
+<div style="font-size: 60%;">
+<blockquote>
+<p>
+<b>Sætning 9.1</b>
+</p>
+
+<p>
+En funktion \(f(x)\) siges at være kontinuert i punktet \((a, f(a))\), når følgende grænseværdier er ens:
+</p>
+
+<p>
+\[\lim_{x \to a^-} \left( f(x) \right) = \lim_{x \to a^+} \left( f(x) \right) = f(a)\]
+</p>
+
+<p>
+En funktion siges at være kontinuert i hele dens definitionsmængde \(Dm(f)\), såfremt ovenstående gælder for alle \(a \in Dm(f)\).
+</p>
+</blockquote>
+<ul>
+<li>\(\lim_{x \to a^-}\) betyder at x nærmer sig a fra venstre side.</li>
+<li>\(\lim_{x \to a^+}\) betyder at x nærmer sig a fra højre side.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgb0bac50" data-background="">
+<h3 id="orgb0bac50">Eksempler</h3>
+<div class="outline-text-3" id="text-orgb0bac50">
+</div>
+</section>
+<section id="slide-orgc9f0cbf" data-background="">
+<h4 id="orgc9f0cbf">Eksempel 1</h4>
+<div style="font-size: 60%;">
+<p>
+Vi har følgende gaffelfunktion
+\[f(x)= \begin{cases} \sqrt{x} & \text{for } 0 \leq x \leq 9 \\ 2x - 15 & \text{for } x > 9 \end{cases}\]
+Vi skal tjekke om den er kontinuert.
+</p>
+
+<p class="fragment (appear)">
+\(\lim_{x \to 9^-} \left( f(x) \right) = \lim_{x \to 9^-} \left( \sqrt{x} \right) = \sqrt{9} = 3\)
+</p>
+<p class="fragment (appear)">
+\(\lim_{x \to 9^+} \left( f(x) \right) = \lim_{x \to 9^+} \left( 2 \cdot x - 15 \right) =2 \cdot 9 - 15 = 3\)
+</p>
+<p class="fragment (appear)">
+Yes, den er kontinuert.
+</p>
+
+</section>
+<section id="slide-orgbfd4cff" data-background="">
+<h4 id="orgbfd4cff">Eksempel 2</h4>
+<div style="font-size: 60%;">
+<p>
+Nu har vi funktionen
+\[f(x) = \frac{1}{x}\]
+</p>
+
+<p>
+Er den kontinuert?
+</p>
+
+<p class="fragment (appear)">
+Vi skal være særligt opmærksomme omkring \(x=0\) (da man ikke må dele med nul).
+</p>
+<p class="fragment (appear)">
+Vi tjekker da
+</p>
+<p class="fragment (appear)">
+\[\lim_{x \to 0^-} \left( \frac{1}{x} \right) = - \infty\]
+</p>
+<p class="fragment (appear)">
+\[\lim_{x \to 0^+} \left( \frac{1}{x} \right) = \infty\]
+</p>
+<p class="fragment (appear)">
+Nej, funktionen er ikke kontinuert i \(x=0\). (For alle andre værdier af x er den).
+</p>
+
+</section>
+<section id="slide-orga36b0b1" data-background="">
+<h4 id="orga36b0b1">Opgaver</h4>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+<b>Opgave 1</b>
+</p>
+
+<p>
+I har givet funktionen \(f(x)=\frac{6}{x-3}\).
+</p>
+
+<ol>
+<li>Undersøg, om funktionen er kontinuert for alle værdier af \(x\).</li>
+
+</ol>
+
+<p>
+<b>Opgave 2</b>
+</p>
+
+<p>
+I har givet gaffelfunktionen 
+</p>
+
+<p>
+\[g(x)= \begin{cases} x^2+2 & \text{for } x \geq 2 \\ -x^2-2 & \text{for } x < 2 \end{cases}\]
+</p>
+
+<ol>
+<li>Undersøg, om funktionen er kontinuert for alle værdier af \(x\).</li>
+
+</ol>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+<b>Opgave 3</b>
+</p>
+
+<p>
+Undersøg, om følgende funktioner er kontinuerte:
+</p>
+
+<div>
+\begin{align*}
+f(x) &= \frac{x^3-1}{2} \\
+g(x) &= \frac{1}{x-1} \\
+h(x) &= 2^x-3^x \\
+i(x) &= \frac{\sin \left( x \right)}{\sin \left( x \right)+1} \\
+j(x) &= x \cdot \cos \left( x \right)
+\end{align*}
+
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd231a66" data-background="">
+<h2 id="orgd231a66">Sekanter og <i>differenskvotienter</i></h2>
+<div class="outline-text-2" id="text-orgd231a66">
+</div>
+</section>
+<section id="slide-org91426a4" data-background="">
+<h3 id="org91426a4">Sekant</h3>
+<blockquote>
+<p>
+En sekant er en ret linje, der skærer en kurve i to punkter.
+</p>
+</blockquote>
+
+<div id="org65773d2" class="figure">
+<p><img src="img/2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" alt="2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" width="400px" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgbe95da7" data-background="">
+<h3 id="orgbe95da7">Sekant</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<ul>
+<li class="fragment appear">Hvordan finder man hældningen for sekanten?</li>
+<li class="fragment appear">\(a = \frac{y_2-y_1}{x_2-x_1}\)</li>
+<li class="fragment appear">Eller</li>
+<li class="fragment appear">\(a = \frac{f(x_2)-f(x_1)}{x_2-x_1}\)</li>
+<li class="fragment appear">Men hvad er egentlig forskellen på \(x_2\) og \(x_1\)?</li>
+<li class="fragment appear">\(x_2 = x_1 + \Delta x \to x_2-x_1 = \Delta x\)</li>
+<li class="fragment appear">sekantens hældning kan altså skrives som</li>
+<li class="fragment appear">\(a = \frac{\Delta y}{\Delta x} = \frac{f(x_1 + \Delta x) - f(x_1)}{\Delta x}\)</li>
+<li class="fragment appear">For et <i>vilkårligt</i> \(x\) på funktionen bliver det til</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org0dcd327" class="figure">
+<p><img src="img/2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" alt="2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" width="400px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-org6b1ea48" data-background="">
+<h3 id="org6b1ea48">Differenskvotienten</h3>
+<div style="font-size: 70%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+<i>Differenskvotienten</i> er en <i>sekants</i> hældning.
+\[\boxed{\frac{\Delta y}{\Delta x} = \frac{f(x+\Delta x) - f(x)}{\Delta x}}\]
+</p>
+<p class="fragment (appear)">
+Differenskvotienten er også <i>gennemsnitshældningen</i> for grafen mellem to punkter.
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="orga582335" class="figure">
+<p><img src="img/2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" alt="2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" width="400px" />
+</p>
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgaca7c7b" data-background="">
+<h2 id="orgaca7c7b">Tangenter og <i>differentialkvotienter</i></h2>
+<div class="outline-text-2" id="text-orgaca7c7b">
+</div>
+</section>
+<section id="slide-org56ef10b" data-background="">
+<h3 id="org56ef10b">Fra differens til differential</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<ul>
+<li class="fragment appear">Hvad sker der, når afstanden mellem sekantens to punkter bliver <b>meget</b> lille?</li>
+<li class="fragment appear">Lad mig demonstrere.</li>
+<li class="fragment appear">Sekanten bliver til en <i>tangent</i>.</li>
+<li class="fragment appear">Differenskvotienten bliver til <i>differentialkvotienten</i>.</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="orgf78bfb2" class="figure">
+<p><a href="./Sekanter_og_tangenter.ggb"><img src="img/2020-09-10_09-11-51_screenshot.png" alt="2020-09-10_09-11-51_screenshot.png" /></a>
+</p>
+</div>
+</div>
+</section>
+<section id="slide-orgfeeeff9" data-background="">
+<h3 id="orgfeeeff9">Differentialkvotient</h3>
+<div style="font-size: 60%;">
+<p>
+Matematisk skrives differentialkvotienten på følgende måde:
+\[\frac{d f}{dx} = \lim_{\Delta x \to 0} \left( \frac{f(x+\Delta x) - f(x)}{\Delta x} \right)\]
+</p>
+
+<ul>
+<li class="fragment appear">Hvis denne grænseværdi eksisterer for alle x-værdier i definitionsmængden, siges det, at funktionen \(f\) er <b>differentiabel</b>, og man har bestemt differentialkvotienten, også kaldet den <i>afledte</i> funktion for \(f\).</li>
+<li class="fragment appear">Vi skrives typisk \(\frac{df}{dx}\) eller \(f'(x)\) som symboler for differentialkvotient/afledt funktion.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3f19553" data-background="">
+<h2 id="org3f19553">Tretrinsreglen</h2>
+<p>
+For at bestemme differentialkvotienter benyttes typisk tre trin.
+</p>
+</section>
+<section id="slide-org5429e17" data-background="">
+<h3 id="org5429e17">Trin 1</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Bestem funktionstilvæksten \(\Delta y = \Delta f = f(x+\Delta x) - f(x)\), og opstil <i>differenkvotienten</i>.
+</p>
+
+<p>
+\[\frac{\Delta f}{\Delta x} = \frac{f(x+\Delta x)-f(x)}{\Delta x}\]
+</p>
+
+<p>
+Differenskvotienten er dermed identisk med hældningen af sekanten mellem punkterne \((x, f(x))\) og \((x+\Delta x, f(x+\Delta x))\).
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+
+<div id="orga365a52" class="figure">
+<p><img src="img/2020-09-10_09-37-48_csm_174_tretrin_d974458908.png" alt="2020-09-10_09-37-48_csm_174_tretrin_d974458908.png" width="600px" />
+</p>
+</div>
+
+</div>
+</section>
+<section id="slide-org1edc0a2" data-background="">
+<h3 id="org1edc0a2">Trin 2</h3>
+<p>
+Omskriv differenskvotienten, således at trin 3 bliver lettere at gennemføre.
+</p>
+</section>
+<section id="slide-org13b68bb" data-background="">
+<h3 id="org13b68bb">Trin 3</h3>
+<div style="font-size: 70%;">
+<p>
+Bestem grænseværdien for differenskvotienten når \(\Delta x \to 0\).
+</p>
+
+<div>
+\begin{align*}
+f'(x) &= \frac{d f}{dx} = \lim_{\Delta x \to 0} \left( \frac{\Delta f}{\Delta x} \right)\\
+&= \lim_{\Delta x \to 0} \left( \frac{f(x+\Delta x) - f(x)}{\Delta x} \right)
+\end{align*}
+
+</div>
+
+<p>
+Hvis denne grænseværdi eksistere for alle \(x\) i difinitionsmængden er funktionen generelt <i>differentiabel</i>. Hvis grænseværdien kun eksistere i udvalgte punkter, er funktionen ikke generelt differentiabel, men kun differentiabel i disse punkter.
+</p>
+</section>
+<section id="slide-org42b322c" data-background="">
+<h3 id="org42b322c">Eksempel</h3>
+<div style="font-size: 60%;">
+<p>
+Lad os bestemme \(\frac{df}{dx}\) for et vilkårlig \(x\) for \(f(x)=-x^2+2\).
+</p>
+</section>
+<section id="slide-org79da8ad" data-background="">
+<h4 id="org79da8ad">Trin 1</h4>
+<div style="font-size: 60%;">
+<p>
+Differenskvotient
+</p>
+
+<div>
+\begin{align*}
+\frac{df}{dx} &= \frac{f(x+\Delta x) - f(x)}{\Delta x} \\
+&= \frac{-(x+\Delta x)^2 +2 - \left( -x^2 + 2 \right)}{\Delta x}
+\end{align*}
+
+</div>
+</section>
+<section id="slide-org0298d8a" data-background="">
+<h4 id="org0298d8a">Trin 2</h4>
+<div style="font-size: 60%;">
+<p>
+Omskriv differenskvotienten så meget som muligt
+</p>
+<div>
+\begin{align*}
+\frac{\Delta f}{\Delta x} &= \frac{f(x+\Delta x) - f(x)}{\Delta x} \\
+&= \frac{-(x+\Delta x)^2 +2 - \left( -x^2 + 2 \right)}{\Delta x} \\
+&= \frac{- x^2 - \Delta x^2 - 2 x \Delta x + 2 +x^2 -2}{\Delta x} \\
+&= \frac{- \Delta x^2 - 2 x \Delta x}{\Delta x} \\
+&= - \Delta x - 2 x \\
+\end{align*}
+
+</div>
+</section>
+<section id="slide-orgad34434" data-background="">
+<h4 id="orgad34434">Trin 3</h4>
+<div style="font-size: 60%;">
+<p>
+Bestem grænseværdien
+</p>
+<div>
+\begin{align*}
+f'(x) &= \frac{df}{dx} \\
+&= \lim_{\Delta x \to 0} \left( \frac{\Delta f}{\Delta x} \right)\\
+&= \lim_{\Delta x \to 0} \left( - \Delta x - 2 x \right)\\
+&= -2 x
+\end{align*}
+
+</div>
+</section>
+<section id="slide-orgbb6daef" data-background="">
+<h3 id="orgbb6daef">Opgaver</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+<b>Opgave 1</b>
+</p>
+
+<p>
+Bestem differentialkvotienten for 
+\[f(x)=3 x^2\] 
+ved hjælp af tretrinsreglen.
+</p>
+
+<p>
+<b>Opgave 2</b>
+</p>
+
+<p>
+Bestem differentialkvotienten for 
+\[f(x)=\frac{1}{x}\] 
+ved hjælp af tretrinsreglen.
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+<b>Opgave 3</b>
+</p>
+
+<p>
+Bestem differentialkvotienten for 
+\[f(x)=\sqrt{x}\] 
+ved hjælp af tretrinsreglen.
+</p>
+
+<p>
+(Hint: Når I har skrevet <i>differenskvotienten</i> op, skal I på et tidspunkt i trin 2 gange med det "smarte" et-tal, \(1=\frac{\sqrt{x+\Delta x}+\sqrt{x}}{\sqrt{x+\Delta x}+\sqrt{x}}\)).
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga4491ce" data-background="">
+<h2 id="orga4491ce">Beviser for regneregler</h2>
+<div class="outline-text-2" id="text-orga4491ce">
+</div>
+</section>
+<section id="slide-orgd1345f4" data-background="">
+<h3 id="orgd1345f4">Differentiation af konstant</h3>
+<div style="font-size: 60%;">
+<p>
+For \(f(x)= a\), hvor \(a\) er en konstant gælder at
+\[\boxed{f'(x) = 0}\]
+</p>
+
+<p>
+(Hint: Opskriv differenskvotienten og se at den giver nul, og dermed på differentialkvotienten også være nul.)
+</p>
+</section>
+<section id="slide-org353be50" data-background="">
+<h3 id="org353be50">Differentiation af led</h3>
+<div style="font-size: 60%;">
+<p>
+For \(f(x) = g(x) \pm h(x)\) gælder at
+\[\boxed{f'(x) = g'(x) \pm h'(x)}\]
+Man kan altså differentiere hvert led for sig.
+</p>
+
+<p>
+(Hint: Skriv differentialkvotienten op for \(f(x)\) vha tretrinsreglen, flyt rundt på leddene og anvend regnereglerne for grænseværdier.)
+</p>
+
+</section>
+<section id="slide-org730037d" data-background="">
+<h3 id="org730037d">Konstant gange funktion</h3>
+<div style="font-size: 60%;">
+<p>
+For \(f(x) = k \cdot g(x)\) gælder at
+\[\boxed{f'(x) = k \cdot g'(x)}\]
+</p>
+
+<p>
+(Hint: Skriv differentialkvotienten op for \(f(x)\) vha tretrinsreglen, sæt noget uden for parentes og anvend regnereglerne for grænseværdier.)
+</p>
+
+</section>
+<section id="slide-orgd5efef7" data-background="">
+<h3 id="orgd5efef7">Produkt og kvotient</h3>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+<b>Produktreglen</b>
+</p>
+
+<p>
+For \(f(x)= g(x)\cdot h(x)\) gælder at
+\[\boxed{f'(x) = g'(x) \cdot h(x) + g(x) \cdot h'(x)}\]
+</p>
+
+<p>
+Det ene makkerpar skal bevise dette.
+</p>
+<p class="fragment (appear)">
+(Hint: Indsæt et "smart" nul \(0=h(x+\Delta x)\cdot g(x) - h(x + \Delta x) \cdot g(x)\) i tælleren i differenskvotienten.)
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+<b>Kvotientreglen (brøk)</b> 
+</p>
+
+<p>
+For \(f(x)= \frac{g(x)}{h(x)}\) gælder at
+\[\boxed{f'(x) = \frac{g'(x) \cdot h(x) - g(x) \cdot h'(x)}{(h(x))^2}}\]
+</p>
+
+<p>
+Det andet makkerpar skal bevise dette.
+</p>
+<p class="fragment (appear)">
+(Hint: Opskriv først differenskvotienten på vanlig vis. Find fællesnævner. Indsæt det "smarte" nul \(0=g(x)\cdot h(x) - g(x)\cdot h(x)\).)
+</p>
+</div>
+
+</section>
+<section id="slide-org12e0f1b" data-background="">
+<h3 id="org12e0f1b">Opgaver</h3>
+
+<div id="orgaf33fe1" class="figure">
+<p><img src="img/2020-09-16_07-37-17_screenshot.png" alt="2020-09-16_07-37-17_screenshot.png" width="400px" />
+</p>
+</div>
+
+
+<div id="orgfd72108" class="figure">
+<p><img src="img/2020-09-16_07-40-25_screenshot.png" alt="2020-09-16_07-40-25_screenshot.png" width="400px" />
+</p>
+</div>
+
+</section>
+<section id="slide-org4a5507c" data-background="">
+<h3 id="org4a5507c">Kædereglen</h3>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Differentiation af sammensatte funktioner.
+</p>
+
+<p>
+For \(f(x) = g(h(x))\) gælder at
+\[\boxed{f'(x) = g'(h(x))\cdot h'(x) = \frac{dg}{dh}\cdot \frac{dh}{dx}}\]
+</p>
+<ul>
+<li class="fragment appear">Først skrives differenskvotienten blot op.</li>
+
+</ul>
+<p class="fragment (appear)">
+\[\frac{\Delta f}{\Delta x} = \frac{g(h(x+\Delta x)) - g(h(x))}{\Delta x}\]
+</p>
+<ul>
+<li class="fragment appear">En ændring i \(h\): \(\Delta h = h(x+\Delta x) - h(x)\)</li>
+<li class="fragment appear">\(h(x+\Delta x) = h(x) + \Delta h\)</li>
+
+</ul>
+<p class="fragment (appear)">
+\[\frac{\Delta f}{\Delta x} = \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta x}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<ul>
+<li class="fragment appear">Ganger med \(\frac{\Delta h}{\Delta h}\)</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+\frac{\Delta f}{\Delta x} &= \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta x}\cdot \frac{\Delta h}{\boxed{\Delta h}} \\
+\frac{\Delta f}{\Delta x} &= \frac{g(h(x)+\Delta h) - g(h(x))}{\boxed{\Delta h}}\cdot \frac{\Delta h}{\Delta x}
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Bruger igen udtrykket for \(\Delta h\)</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+\frac{\Delta f}{\Delta x} &= \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta h}\cdot \frac{h(x+\Delta x) - h(x)}{\Delta x}
+\end{align*}
+
+</div>
+</div>
+
+</section>
+<section id="slide-org57d90cf" data-background="">
+<h3 id="org57d90cf">Kædereglen - fortsat</h3>
+<div style="font-size: 50%;">
+<div>
+\begin{align*}
+\frac{\Delta f}{\Delta x} &= \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta h}\cdot \frac{h(x+\Delta x) - h(x)}{\Delta x}
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Finder nu grænseværdien</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+f'(x) = \lim_{\Delta x \to 0}\left(\frac{\Delta f}{\Delta x}\right) &=\lim_{\Delta x \to 0}\left( \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta h}\cdot \frac{h(x+\Delta x) - h(x)}{\Delta x} \right) \\
+&= \lim_{\Delta x \to 0} \left( \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta h} \right) \cdot \lim_{\Delta x \to 0} \left( \frac{h(x+\Delta x) - h(x)}{\Delta x} \right)
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Ser nu på grænseværdien af ændringen i \(h\)</li>
+
+</ul>
+<p class="fragment (appear)">
+\[\Delta h = h(x+\Delta x) - h(x)\]
+</p>
+<ul>
+<li class="fragment appear">Her ses det at \(\Delta h \to 0\) når \(\Delta x \to 0\).</li>
+<li class="fragment appear">Den første grænseværdi kan altså omskrives</li>
+
+</ul>
+<p class="fragment (appear)">
+\[f'(x) = \lim_{\Delta x \to 0}\left(\frac{\Delta f}{\Delta x}\right)=\boxed{\lim_{\Delta h \to 0}} \left( \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta h} \right) \cdot \lim_{\Delta x \to 0} \left( \frac{h(x+\Delta x) - h(x)}{\Delta x} \right)\]
+</p>
+
+</section>
+<section id="slide-orgf29b375" data-background="">
+<h3 id="orgf29b375">Kædereglen - fortsat</h3>
+<div style="font-size: 50%;">
+<p>
+\[f'(x) = \lim_{\Delta x \to 0}\left(\frac{\Delta f}{\Delta x}\right)=\lim_{\Delta h \to 0}\left( \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta h} \right) \cdot \lim_{\Delta x \to 0} \left( \frac{h(x+\Delta x) - h(x)}{\Delta x} \right)\]
+</p>
+<ul>
+<li class="fragment appear">Her genkendes grænseværdierne som værende afledte funktioner</li>
+
+</ul>
+<p class="fragment (appear)">
+\[f'(x) = \frac{d g}{d h} \cdot \frac{d h}{dx} = g'(h)\cdot h'(x)\]
+</p>
+
+</section>
+<section id="slide-org75dbed8" data-background="">
+<h3 id="org75dbed8">Opgaver</h3>
+
+<div id="org8035ae6" class="figure">
+<p><img src="img/2020-09-16_07-39-08_screenshot.png" alt="2020-09-16_07-39-08_screenshot.png" width="400px" />
+</p>
+</div>
+
+
+<div id="org65655fe" class="figure">
+<p><img src="img/2020-09-16_07-41-58_screenshot.png" alt="2020-09-16_07-41-58_screenshot.png" width="400px" />
+</p>
+</div>
+
+</section>
+<section id="slide-org3730387" data-background="">
+<h3 id="org3730387">Den naturlige eksponentialfunktion</h3>
+<div style="font-size: 60%;">
+<p>
+For \(f(x) = e^x\) gælder at \[\boxed{f'(x)=e^x}\]
+</p>
+
+<p>
+Den naturlige eksponentialfunktion er den <b>eneste</b> funktion, som giver sig selv, når den differentieres.
+</p>
+
+<p class="fragment (appear)">
+Inden vi skal se på, hvordan dette er udledt, skal vi lige se på, hvad Eulers tal, \(e\), egentlig er for en størrelse.
+</p>
+
+</section>
+<section id="slide-orgecac840" data-background="">
+<h4 id="orgecac840">Eulers tal</h4>
+<div style="font-size: 60%;">
+<p>
+Første gang fundet af Jacob Bernoulli i 1683 i forbindelse med beregning af renters rente.
+</p>
+<p class="fragment (appear)">
+Begynder med 1 kr/$/£/&#x2026; på kontoen, får 100% i rente, som tilskrives en gang om året ved årets afslutning.
+</p>
+<p class="fragment (appear)">
+Efter ét år er der altså \[1\cdot (1 + 1.00)^1= 2\] kr/$/£ på kontoen.
+</p>
+<p class="fragment (appear)">
+Hvad sker der, hvis der tilskrives renter hvert halve år?
+</p>
+<p class="fragment (appear)">
+Renten må være det halve, mens der nu er to terminer
+</p>
+<p class="fragment (appear)">
+\[1 \cdot (1 + 0.5)^2 = 2.25\]
+</p>
+</section>
+<section id="slide-orge4f9e0a" data-background="">
+<h4 id="orge4f9e0a">Eulers tal - fortsat</h4>
+<div style="font-size: 60%;">
+<p>
+eller hvert kvartal?
+</p>
+<p class="fragment (appear)">
+Renten er nu 25% og antal terminer er 4
+</p>
+<p class="fragment (appear)">
+\(1\cdot (1 + 0.25)^4 = 2.441\)
+</p>
+<p class="fragment (appear)">
+Kan dette ikke gøres mere generelt?
+</p>
+<p class="fragment (appear)">
+Jo, da.
+</p>
+<p class="fragment (appear)">
+\[1 \cdot \left( 1 + \frac{1}{n} \right)^n\] Renten udgør nu en n'te-del mens antallet af terminer er n.
+</p>
+
+</section>
+<section id="slide-org4de793e" data-background="">
+<h4 id="org4de793e">Eulers tal - fortsat</h4>
+<div style="font-size: 60%;">
+<p>
+Hvad sker der, når \(n\) vokser?
+</p>
+
+
+<div id="org2a5a624" class="figure">
+<p><a href="./Eulers_tal_som_graensevaerdi.ggb" width="600px"><img src="img/2020-09-15_13-07-02_screenshot.png" alt="2020-09-15_13-07-02_screenshot.png" width="600px" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org74814b5" data-background="">
+<h4 id="org74814b5">Eulers tal - fortsat</h4>
+<div style="font-size: 60%;">
+<p>
+Det nærmer sig altså en fast værdi. Denne værdi er <i>Eulers</i> tal.
+</p>
+
+<blockquote>
+<div>
+\begin{align*}
+e \equiv \lim_{n \to \infty}\left( \left(1 + \frac{1}{n} \right)^n\right)
+\end{align*}
+
+</div>
+</blockquote>
+
+<p class="fragment (appear)">
+En alternativ måde at skrive det på er \(m=\frac{1}{n}\), så \(m \to 0\) for \(n \to \infty\). 
+</p>
+<p class="fragment (appear)">
+\[e = \lim_{m \to 0} \left( \left( 1 + m \right)^{\frac{1}{m}} \right)\]
+</p>
+
+</section>
+<section id="slide-orgfb98d7e" data-background="">
+<h3 id="orgfb98d7e">Den naturlige logaritme</h3>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+For \(f(x)=\ln(x)\) gælder at
+\[\boxed{f'(x) = \frac{1}{x}}\]
+</p>
+<p class="fragment (appear)">
+Bevis: Først opskrives differenskvotienten
+\[\frac{\Delta f}{\Delta x} = \frac{\ln (x + \Delta x) - \ln (x)}{\Delta x}\]
+</p>
+<p class="fragment (appear)">
+Så udnyttes en række logaritmeregneregler.
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+\frac{\Delta f}{\Delta x} &= \frac{\ln (x + \Delta x) - \ln (x)}{\Delta x} \\
+&= \frac{1}{\Delta x}\cdot \ln \left( \frac{x + \Delta x}{x} \right) 
+\end{align*}
+
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<div class="fragment (appear)">
+\begin{align*}
+\frac{\Delta f}{\Delta x} &= \frac{1}{\Delta x}\cdot \ln \left( 1 + \frac{\Delta x}{x} \right) \\
+&= \ln \left( \left( 1 + \frac{\Delta x}{x} \right)^{\frac{1}{\Delta x}} \right)
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Så indføres variablen \(n= \frac{\Delta x}{x}\), hvorfra \(\frac{1}{\Delta x} = \frac{1}{n}\cdot \frac{1}{x}\).
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+\frac{\Delta f}{\Delta x} &= \ln \left( \left( 1 + n \right)^{\frac{1}{n}\cdot \frac{1}{x}} \right) \\
+&= \ln \left( \left( \left( 1 + n \right)^{\frac{1}{n}} \right)^{\frac{1}{x}} \right)
+\end{align*}
+
+</div>
+</div>
+
+</section>
+<section id="slide-orgb45c29b" data-background="">
+<h3 id="orgb45c29b">Den naturlige logaritme - fortsat</h3>
+<div style="font-size: 45%;">
+<div class="column" style="float:left; width: 30%">
+<div>
+\begin{align*}
+\frac{\Delta f}{\Delta x} = \ln \left( \left( \left( 1 + n \right)^{\frac{1}{n}} \right)^{\frac{1}{x}} \right)
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Herfra udnyttes endnu en logaritmeregneregel
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+\frac{\Delta f}{\Delta x} = \frac{1}{x}\cdot\ln \left(  \left( 1 + n \right)^{\frac{1}{n}}\right)
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Nu bestemmes differentialkvotienten ved at betragte grænseværdien \(\lim_{n \to 0}\).
+Dette kan gøres da \(n \to 0\) for \(\Delta x \to 0\).
+</p>
+</div>
+
+<div class="column" style="float:right; width: 70%">
+<div class="fragment (appear)">
+\begin{align*}
+\frac{d f}{dx} &= \lim_{n \to 0} \left(\frac{1}{x}\cdot\ln \left(  \left( 1 + n \right)^{\frac{1}{n}}\right)\right) \\
+&= \frac{1}{x} \cdot\lim_{n \to 0}\left(\ln \left(  \left( 1 + n \right)^{\frac{1}{n}}\right)\right) \\
+&= \frac{1}{x}\cdot \ln \left( \lim_{n \to 0} \left( \left( 1 + n \right)^{\frac{1}{n}} \right) \right)
+\end{align*} 
+
+</div>
+<p class="fragment (appear)">
+Her indses det, at den inderste grænseværdi er lig en af definitionerne på Eulers tal. \(\boxed{e = \lim_{n \to 0} \left( \left( 1+n \right)^{\frac{1}{n}} \right)}\).
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+\frac{d f}{dx} &= \frac{1}{x}\cdot \ln \left( e \right) = \frac{1}{x} \cdot 1 = \frac{1}{x}
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Det sidste skridt udnytter at den naturlige logaritme og den naturlige eksponentialfunktion er hinanden inverse funktioner (\(\ln \left( e^x \right) = x = e^{\ln (x)}\)).
+</p>
+</div>
+</section>
+<section id="slide-orgb73692b" data-background="">
+<h3 id="orgb73692b">\(e^x\) igen</h3>
+<div style="font-size: 50%;">
+<p>
+Nu kan det "nemt" bevises at for \[f(x) =e^x \text{ er } f'(x) = e^x\]
+</p>
+
+<p class="fragment (appear)">
+Benytter:
+</p>
+<ul>
+<li class="fragment appear">at \(\ln(x)\) og \(e^x\) er hinandens inverse funktioner.</li>
+<li class="fragment appear">kædereglen for differentiation.</li>
+<li class="fragment appear">den afledte funktion for \(\ln(x)\).</li>
+
+</ul>
+
+<div class="fragment (appear)">
+\begin{align*}
+x &= x \\
+\ln \left( e^x \right) &= x \text{ (inverse funktioner)} \\
+\frac{d}{dx}\left( \ln \left( e^x \right) \right) &= \frac{dx}{dx} \text{ (diff på begge sider)} \\
+\frac{1}{e^x} \cdot \frac{d}{dx}\left( e^x \right) &= 1 \text{ (kæderegel)} \\
+\frac{d}{dx} \left( e^x \right) &= e^x \text{ (omrokering)}
+\end{align*}
+
+</div>
+
+</section>
+<section id="slide-orgd99e307" data-background="">
+<h3 id="orgd99e307">Opgaver</h3>
+<div style="font-size: 60%;">
+<p>
+Differentier funktionerne
+</p>
+<ol>
+<li>\(f(x) = \ln \left( x^2 \right)\)</li>
+<li>\(f(x) = x \cdot \cos \left( \ln (x) \right)\)</li>
+<li>\(f(x) = \frac{x}{\cos \left( x \right)}+e^x\)</li>
+<li>\(f(x) = \cos \left( e^x \right)\)</li>
+<li>\(f(x) = \frac{x \cdot \ln \left( \sin \left( x \right) \right)+\tan \left( x \right)}{e^x}\)</li>
+
+</ol>
+</section>
+<section id="slide-orgf8d9cb6" data-background="">
+<h3 id="orgf8d9cb6">Potensreglen</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+For \(f(x) = x^n\) gælder at
+\[\boxed{f'(x) = n \cdot x^{n-1}}\]
+</p>
+<p class="fragment (appear)">
+Reglerne for den naturlige eksponential- og logaritmefunktion samt kædereglen udnyttes.
+</p>
+<p class="fragment (appear)">
+Men først udnyttes at \[x^n = \left( e^{\ln(x)} \right)^n = e^{n \cdot \ln(x)}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<div class="fragment (appear)">
+\begin{align*}
+\frac{d f}{dx} &= \frac{d}{dx} \left( e^{n \cdot \ln(x)} \right) \\
+&= e^{n \cdot \ln(x)} \cdot \frac{d}{dx} \left( n \cdot \ln(x) \right)\\
+&= e^{n \cdot \ln(x)} \cdot n \cdot \frac{1}{x} \\
+&= x^n \cdot n \cdot \frac{1}{x} \\
+&= n \cdot \frac{x^n}{x} \\
+&= n \cdot x^{n-1}
+\end{align*}
+
+</div>
+</div>
+</section>
+<section id="slide-orgf013db9" data-background="">
+<h3 id="orgf013db9">Opgaver</h3>
+<div style="font-size: 60%;">
+<p>
+Nu er I efterhånden eksperter, så differentier lige følgende funktioner "i hånden"
+</p>
+<ol>
+<li>\(f(x)= \cos \left( x \right) \cdot \sin \left( x \right)\)</li>
+<li>\(f(x) = \frac{\cos \left( \sqrt{x} \right)}{x^2}\)</li>
+<li>\(f(x) = \frac{x \cdot \tan \left( x \right)+\sin \left( x \right)}{x^4}\)</li>
+<li>\(f(x) = \tan \left( \cos \left( x^2 \right) \right)\)</li>
+
+</ol>
+
+</section>
+</section>
+<section>
+<section id="slide-org07aaa54" data-background="">
+<h2 id="org07aaa54">Videoer med beviser</h2>
+<div style="font-size: 60%;">
+<p>
+Som I har set, har vi været igennem 7 beviser, for regneregler ifm differentiation,
+</p>
+<p class="fragment (appear)">
+og lur mig, om I ikke er 7 makkerskabsgrupper :)
+</p>
+<blockquote class="fragment (appear)">
+<p>
+Hver makkerskabsgruppe får tildelt et bevis, og skal efterfølgende udarbejde en videopræsentation, hvor gruppen udfører beviset. 
+</p>
+</blockquote>
+<p class="fragment (appear)">
+Hvis man kan finde alternative beviser til den pågældende regneregel, og hellere vil bruge dem, er det helt i orden. Det vigtigste er, at I får øvet jer i bevisførelse og mundtlig præsentation.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb0c4225" data-background="">
+<h2 id="orgb0c4225">Logaritmisk differentiation</h2>
+<p>
+Hvis funktionen \(f(x)\) er differentiabel og forskellig fra 0 i punktet \(x\), så gælder
+\[\boxed{f'(x) = f(x) \cdot \frac{d}{dx}\left( \ln \left( \lvert f(x) \rvert \right) \right)}\]
+</p>
+
+</section>
+<section data-background="">
+<p>
+Bevis: Anvender kædereglen til at differentiere \(\ln \left( \lvert f(x) \rvert \right)\).
+\[\frac{d}{dx}\left( \ln \left( \lvert f(x) \rvert \right) \right) = \frac{1}{f(x)}\cdot f'(x)\]
+Herfra kan \(f'(x)\) isoleres.
+</p>
+</section>
+<section id="slide-org1b434c8" data-background="">
+<h3 id="org1b434c8">Eksempler</h3>
+<div style="font-size: 60%;">
+<p>
+Vi har funktionen
+\[f(x) = x^2\cdot \left( \cos (x) \right)^4 \cdot e^x\]
+som skal differentieres vha logaritmisk differentiation.
+</p>
+<div>
+\begin{align*}
+f'(x) &= f(x) \cdot \frac{d}{dx}\left( \ln \left( \lvert f(x) \rvert \right) \right)\\
+&= x^2\cdot \left( \cos (x) \right)^4 \cdot e^x \cdot \frac{d}{dx}\left( \ln \left( \lvert x^2\cdot \left( \cos (x) \right)^4 \cdot e^x\rvert \right) \right) \\
+&= x^2\cdot \left( \cos (x) \right)^4 \cdot e^x \cdot \frac{d}{dx}\left( \ln \left( x^2 \right) + \ln \left(\left( \cos (x) \right)^4\right) + \ln \left(e^x\right) \right) \\
+&= x^2\cdot \left( \cos (x) \right)^4 \cdot e^x \cdot \frac{d}{dx}\left( 2 \cdot \ln \left( x \right) + 4 \cdot \ln \left( \cos (x) \right) + x \right) \\
+&= x^2\cdot \left( \cos (x) \right)^4 \cdot e^x \cdot \left( \frac{2}{x}+\frac{4}{\cos(x)}\cdot(-\sin(x))+1 \right)
+\end{align*}
+
+</div>
+
+</section>
+<section id="slide-org4defe42" data-background="">
+<h3 id="org4defe42">Opgaver</h3>
+<div style="font-size: 60%;">
+<p>
+Anvend logaritmisk differentiation til at finde de afledte funktioner
+</p>
+
+<ol>
+<li>\(f(x)=x^x\)</li>
+<li>\(f(x)=x^{2 \cdot \cos \left( x \right)}\cdot \ln \left( x \right)\)</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-orgc41729a" data-background="">
+<h2 id="orgc41729a">Vigtige sætninger for differentiable funktioner</h2>
+<div class="outline-text-2" id="text-orgc41729a">
+</div>
+</section>
+<section id="slide-org467b048" data-background="">
+<h3 id="org467b048">Rolles sætning</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<blockquote>
+<p>
+<b>Sætning 9.9 - Rolles sætning</b>
+</p>
+
+<p>
+For en funktion \(f(x)\), der er kontinuert i intervallet \([a\,;\,b]\) og differentiabel i \(]a\,;\,b[\) og hvor \(f(a) = f(b)\), gælder følgende:
+</p>
+
+<p>
+Der findes mindst ét tal \(c\) tilhørende intervallet \(]a\,;\,b[\) hvor \(f'(c) =0\).
+</p>
+</blockquote>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="orga06ee1d" class="figure">
+<p><img src="img/2020-09-21_11-04-32_csm_191_fig12_872d0c941d.png" alt="2020-09-21_11-04-32_csm_191_fig12_872d0c941d.png" width="600px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-orgb5415c0" data-background="">
+<h3 id="orgb5415c0">Middelværdisætningen</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<blockquote>
+<p>
+<b>Sætning 9.10 - Middelværdisætningen</b>
+</p>
+
+<p>
+For en funktion \(f(x)\), der er kontinuert i intervallet \([a\,;\,b]\) og differentiabel i \(]a\,;\,b[\), gælder følgende:
+</p>
+
+<p>
+Der findes mindst ét tal \(c\) tilhørende intervallet \(]a\,;\,b[\), hvor 
+\[f'(c) = \frac{f(b)-f(a)}{b-a}\]
+</p>
+</blockquote>
+</div>
+<div class="column" style="float:right; width: 50%">
+
+<div id="orgd7b3618" class="figure">
+<p><img src="img/2020-09-21_11-06-36_csm_192_fig13_rev_1_81fac563d8.png" alt="2020-09-21_11-06-36_csm_192_fig13_rev_1_81fac563d8.png" width="600px" />
+</p>
+</div>
+<ul>
+<li class="fragment appear">Der er altså mindst ét sted, hvor funktionen har samme hældning som sekantens hældning.</li>
+
+</ul>
+</div>
+
+</section>
+<section id="slide-org9cfb365" data-background="">
+<h3 id="org9cfb365">Opgave</h3>
+<div style="font-size: 60%;">
+<p>
+Anvend middelværdissætningen for \(f(x)=x^3-x+1\) i intervallet \([-2\,;\,2]\) til at bestemme følgende:
+</p>
+<ol>
+<li>Bestem sekanthældningen imellem punkterne \(\left( -2 \,,\, f(-2) \right)\) og \(\left( 2\,,\,f(2) \right)\).</li>
+<li>Bestem det eller de tal \(c\), hvor \(f'(c)\) er identisk med sekanthældningen.</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-orga111c7d" data-background="">
+<h2 id="orga111c7d">Tangenter til kurver</h2>
+<div class="outline-text-2" id="text-orga111c7d">
+</div>
+</section>
+<section id="slide-org7a4b511" data-background="">
+<h3 id="org7a4b511">Bestemmelse af tangent til kurve - et eksempel</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Vi har den differentiable funktion
+\[f(x)= -x^2 +x +3\]
+og vil gerne finde ligningen for tangenten til kurven gennem punktet \(P(2,f(2))\).
+</p>
+<ul>
+<li class="fragment appear">Først bestemmes hældningen i punktet vha \(a=f'(2)\).</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+f'(x) &= -2 x +1 \\
+a=f'(2) &= -2 \cdot 2 + 1 = -3
+\end{align*}
+
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<ul>
+<li class="fragment appear">Nu kan tangentens skæring med y-aksen bestemmes vha \(b= y_1 - a \cdot x_1\)</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+y_1 &= f(2) = -2^2+2+3 = 1 \\
+b &= f(2) - a \cdot 2 = 1 -(-3)\cdot 2\\
+b &= 7
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Tangentens forskrift bliver da \[\boxed{t: y=-3x +7}\]</li>
+
+</ul>
+</div>
+
+</section>
+<section data-background="">
+<p>
+Kan dette ikke gøres mere generelt?
+</p>
+<p class="fragment (appear)">
+Jo da!
+</p>
+</section>
+<section id="slide-orgcd786c4" data-background="">
+<h3 id="orgcd786c4">Generel bestemmelse af tangent til kurve</h3>
+<div style="font-size: 60%;">
+<p>
+Vi har den differentiable funktion \(f(x)\), og vil gerne finde ligningen for tangenten til kurven gennem punktet \((x_0,f(x_0))\).
+</p>
+
+<ul>
+<li class="fragment appear">Først bestemmes hældningstallet \(a=f'(x_0)\)</li>
+<li class="fragment appear">Så findes skæringen med y-aksen</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+b &= y_1 - a\cdot x_1 \quad \text{, hvor $(x_1,y_1)$ er et kendt punkt på grafen} \\
+b &= f(x_0) - f'(x_0) \cdot x_0
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Kan det hele sættes sammen</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+t: y &= a \cdot x + b \\
+t: y &= f'(x_0) \cdot x + f(x_0) - f'(x_0) \cdot x_0 \\
+t: y &= f'(x_0) \cdot \left(x - x_0\right) + f(x_0)
+\end{align*}
+
+</div>
+</section>
+<section id="slide-org9eae79c" data-background="">
+<h3 id="org9eae79c">Tangent til kurve</h3>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 70%">
+<blockquote>
+<p>
+<b>Sætning 9.6 - Tangentligningen</b>
+</p>
+
+<p>
+En differential funktion \(f(x)\) har i punktet \((x_0,f(x_0))\) en tangent til grafen med ligningen
+</p>
+
+<p>
+\[\boxed{y = f'(x_0) \cdot \left( x -x_0 \right) + f(x_0)}\]
+</p>
+</blockquote>
+<ul>
+<li class="fragment appear">Find først den afledte funktion.</li>
+<li class="fragment appear">Beregn hældningen af tangenten ved at indsætte den opgivne x-værdi i den afledte funktion.</li>
+<li class="fragment appear">Beregn \(f(x_0)\)</li>
+<li class="fragment appear">Indsæt de oplyste og beregnede værdier i ligningen.</li>
+<li class="fragment appear">Reducer mest muligt, så ligningen ligner \(y=a \cdot x + b\).</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width: 30%">
+
+<div id="orgbc38bac" class="figure">
+<p><img src="img/2020-09-21_11-57-58_csm_176_Tangtens_ligning_60b9343e42.png" alt="2020-09-21_11-57-58_csm_176_Tangtens_ligning_60b9343e42.png" width="600px" />
+</p>
+</div>
+</div>
+</section>
+<section id="slide-org8144e8c" data-background="">
+<h3 id="org8144e8c">Opgaver</h3>
+<div class="outline-text-3" id="text-org8144e8c">
+</div>
+</section>
+<section id="slide-orgb6b374b" data-background="">
+<h4 id="orgb6b374b">Obligatorisk</h4>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+<b>Opgave 1</b>
+</p>
+
+<p>
+Givet funktionen
+</p>
+
+<p>
+\[f(x)=\sqrt{x-2}\]
+</p>
+
+<ol>
+<li>Bestem en ligning for tangenten til grafen for \(x=4\).</li>
+<li>Bestem vinklen mellen tangenten og x-aksen.</li>
+
+</ol>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+<b>Opgave 2</b>
+</p>
+
+<p>
+Funktionen \(f\) er givet ved 
+</p>
+
+<p>
+\[f(x) = 3x^2-6x +5\]
+</p>
+
+<p>
+Linjen \(m\) tangerer grafen for \(f\) i punktet \(P(2\,;\,f(2))\).
+</p>
+
+<ol>
+<li>Bestem en ligning for \(m\).</li>
+<li>Tegn graferne for \(f\) og \(m\) i samme koordinatsystem.</li>
+<li>Bestem en ligning for den tangent, der har hældningskoefficienten 12.</li>
+
+</ol>
+</div>
+</section>
+<section id="slide-org1425136" data-background="">
+<h4 id="org1425136">Ekstra</h4>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 60%">
+<p>
+Figuren viser et snit gennem en eksisterende støjvold, der skal udvides med en skråning.
+</p>
+
+<p>
+Den eksisterende vold følger grafen for et 2. gradspolynomium, som har en bredde ved foden på 12 m. Grafen for \(f\) er vist som rød.
+</p>
+
+<p>
+Der udvides med en skråning, som følger en lineær funktion \(g\), vist som blå. Grafen for \(g\) tangerer grafen for \(f\) i \(B(9\,;\,f(9))\).
+</p>
+
+<p>
+For at kunne beregne på volden er forskrifterne for \(f\) og \(g\) nødvendige.
+</p>
+
+<p>
+Vinklen mellem linjen \(g\) og vandret er \(v=135^{\circ}\) som vist.
+</p>
+
+<ol>
+<li>Bestem en forskrift for \(f\) og \(g\).</li>
+<li>Bestem højden af støjvolden.</li>
+
+</ol>
+</div>
+
+<div class="column" style="float:right; width: 40%">
+
+<div id="orgccf341e" class="figure">
+<p><img src="img/2020-09-21_13-05-58_csm_224_opgave_9-39_202px_593d508d02.png" alt="2020-09-21_13-05-58_csm_224_opgave_9-39_202px_593d508d02.png" width="600px" />
+</p>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orga395415" data-background="">
+<h2 id="orga395415">Funktionsanalyse og monotoniforhold</h2>
+<div style="font-size: 60%;">
+<p>
+En funktionsanalyse indholder følgende punkter:
+</p>
+<ul>
+<li>Bestemmelse af \(Dm(f)\) og \(Vm(f)\).</li>
+<li>Bestemmelse af skæringer med hhv x- og y-aksen.</li>
+<li>Bestemmelse af lokale og globale ekstrema (minimums- og maksimumpunkter).</li>
+<li>Bestemmelse af eventuelle vendetangentpunkter.</li>
+<li>Redegørelse for funktionens monotoniforhold.</li>
+<li>Bestemmelse af eventuelle asymptoter</li>
+
+</ul>
+
+<p>
+Vi ser i det følgende på lokale ekstrema, vendetangentpunkter og monotoniforhold, som alle beror på differentialregning. Vi vil også se på asymptoter, da det beror på grænseværdiberegninger.
+</p>
+
+</section>
+<section id="slide-org6afef29" data-background="">
+<h3 id="org6afef29">Lokale ekstrema</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 60%">
+<blockquote>
+<p>
+<b>Sætning 9.8</b>
+</p>
+
+<p>
+For en differentiabel og kontinuert funktion \(f(x)\) gælder der for et punkt \((x_0,f(x_0))\) hvor \(f'(x_0) =0\) at:
+</p>
+
+<ul>
+<li>Når \(f'(x) > 0\) for \(x \to x_0^-\) og \(f'(x ) <0\) for \(x \to x_0^+\) er \((x_0,f(x_0))\) et lokalt maskimum.</li>
+<li>Når \(f'(x) < 0\) for \(x \to x_0^-\) og \(f'(x ) >0\) for \(x \to x_0^+\) er \((x_0,f(x_0))\) et lokalt minimum.</li>
+
+</ul>
+</blockquote>
+</div>
+
+<div class="column" style="float:right; width: 40%">
+
+<div id="org69b1289" class="figure">
+<p><img src="img/2020-09-21_13-29-11_csm_182_fig_16_0506_c9ce355b20.png" alt="2020-09-21_13-29-11_csm_182_fig_16_0506_c9ce355b20.png" width="600px" />
+</p>
+</div>
+
+<ul>
+<li>Punkt \(A\) er et lokalt maksimum.</li>
+<li>Punkt \(B\) er et lokalt minimum.</li>
+<li>Punkt \(C\) er et vandret vendetangentpunkt.</li>
+
+</ul>
+</div>
+</section>
+<section id="slide-org584bc73" data-background="">
+<h3 id="org584bc73">Eksempel</h3>
+<div style="font-size: 60%;">
+<p>
+Vi ser på funktionen 
+</p>
+
+<p>
+\[f(x)=x^3+3x^2\]
+</p>
+
+<p class="fragment (appear)">
+<b>Ekstrema</b> Finder den afledte funktion
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+f'(x) &=  3x^2 + 6 x
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Sætter lig nul og løser ligningen
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+3x^2+6x&=0 \text{ medfører at } x=0 \\
+3x +6 &= 0 \to \\
+x &= -2
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Altså er \(x=0\) og \(x=-2\) mulige kandidater til ekstrema.
+</p>
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<p>
+Tjekker fortegnene for \(f'(x)\) for repræsentative x-værdier
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">x</th>
+<th scope="col" class="org-right">-3</th>
+<th scope="col" class="org-right">-2</th>
+<th scope="col" class="org-right">-1</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(f'(x)\)</td>
+<td class="org-right">9</td>
+<td class="org-right">0</td>
+<td class="org-right">-3</td>
+<td class="org-right">0</td>
+<td class="org-right">9</td>
+</tr>
+
+<tr>
+<td class="org-left">\(f(x)\)</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">\(f(x)\)</td>
+<td class="org-right">\(\nearrow\)</td>
+<td class="org-right">\(\to\)</td>
+<td class="org-right">\(\searrow\)</td>
+<td class="org-right">\(\to\)</td>
+<td class="org-right">\(\nearrow\)</td>
+</tr>
+</tbody>
+</table>
+
+<p class="fragment (appear)">
+Af dette kan det ses, at \((-2,4)\) er lokalt maksimum og \((0,0)\) er lokalt minimum.
+</p>
+</section>
+<section id="slide-orgeaf7fdf" data-background="">
+<h3 id="orgeaf7fdf">Vendetangentpunkter</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Et vendetangentpunkt er et punkt, hvor <i>krumningen</i> skifter fortegn, altså hvor hældningen af hældningen skifter fortegn.
+</p>
+
+<p>
+x-koordinaterne til eventuelle vendetangentpunkter findes ved at sætte \(f''(x)=0\) og løse ligningen.
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org7c30fd1" class="figure">
+<p><img src="img/2020-09-22_09-08-32_screenshot.png" alt="2020-09-22_09-08-32_screenshot.png" width="600px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-org60c364a" data-background="">
+<h3 id="org60c364a">Eksempel</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Vi fortsætter med
+\[f(x)=x^3+3x^2\]
+</p>
+
+<p>
+og finder den dobbeltafledte:
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+f(x) &= x^3+3x^2 \to \\
+f'(x) &= 3x^2+6x \to \\
+f''(x) &= 6x + 6
+\end{align*}
+
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p class="fragment (appear)">
+Og sætter lig nul og løser ligningen
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+6x+6 &= 0 \to \\
+x &= -1
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Så der er ét vendetangentpunkt i \((-1,f(-1))=(-1,2)\).
+</p>
+</div>
+</section>
+<section id="slide-org7122538" data-background="">
+<h3 id="org7122538">Monotoniforhold</h3>
+<div style="font-size: 60%;">
+<p>
+Er en beskrivelse af, i hvilke intervaller funktioner er henholdsvis voksende og aftagende.
+</p>
+
+<p>
+Anvend tabellen fra bestemmelse af ekstrema til hjælp.
+</p>
+
+</section>
+<section id="slide-org52010ce" data-background="">
+<h3 id="org52010ce">Eksempel</h3>
+<div style="font-size: 60%;">
+<p>
+Vi fortsætter med
+\[f(x)=x^3+3x^2\]
+hvor vi fra tidligere havde
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">x</th>
+<th scope="col" class="org-right">-3</th>
+<th scope="col" class="org-right">-2</th>
+<th scope="col" class="org-right">-1</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(f'(x)\)</td>
+<td class="org-right">9</td>
+<td class="org-right">0</td>
+<td class="org-right">-3</td>
+<td class="org-right">0</td>
+<td class="org-right">9</td>
+</tr>
+
+<tr>
+<td class="org-left">\(f(x)\)</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">\(f(x)\)</td>
+<td class="org-right">\(\nearrow\)</td>
+<td class="org-right">\(\to\)</td>
+<td class="org-right">\(\searrow\)</td>
+<td class="org-right">\(\to\)</td>
+<td class="org-right">\(\nearrow\)</td>
+</tr>
+</tbody>
+</table>
+<p class="fragment (appear)">
+Herfra ses det, at
+</p>
+
+<ul>
+<li class="fragment appear">\(f(x)\) er voksende i intervallerne \(]-\infty \,;\,-2[\quad \cup\quad ]0\,;\,\infty[\) .</li>
+<li class="fragment appear">\(f(x)\) er aftagende i intervallet \(] -2 \,;\, 0 [\).</li>
+
+</ul>
+</section>
+<section id="slide-org9e8fdc8" data-background="">
+<h3 id="org9e8fdc8">Opgave</h3>
+<p>
+Givet funktionen
+\[f(x) = 6x - \frac{1}{2}x^3\]
+</p>
+
+<ol>
+<li>Bestem lokale ekstrema.</li>
+<li>Bestem eventuelle vendetangentpunkter.</li>
+<li>Redegør for funktionens monotoniforhold.</li>
+<li>Tegn graferne for \(f(x)\), \(f'(x)\) og \(f''(x)\) i samme koordinatystem.</li>
+
+</ol>
+
+</section>
+<section id="slide-org9e91457" data-background="">
+<h3 id="org9e91457">Asymptoter</h3>
+<div style="font-size: 60%;">
+<dl>
+<dt>Vandret asymptote</dt><dd>Hvis grænseværdien er en konstant værdi, når \(x\to \infty\) eller \(x\to - \infty\). Den konstante værdi siges at være den vandrette asymptote.</dd>
+<dt>Lodret asymtotote</dt><dd>Hvis funktionsværdierne går mod plus uendeligt eller minus uendeligt, når \(x\) går mod en bestemt værdi. Typisk i udkanten af definitionsmængden.</dd>
+<dt>Skrå asymptote</dt><dd>Hvis grænseværdien for funktionen er en lineær sammenhæng, når \(x \to \infty\) eller \(x \to - \infty\).</dd>
+
+</dl>
+
+</section>
+<section id="slide-org2aa8c29" data-background="">
+<h3 id="org2aa8c29">Eksempel</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+\[f(x) = x+ \frac{1}{2} + \frac{1}{4x}\] 
+</p>
+<p class="fragment (appear)">
+Tjekker \(Dm(f)\).
+</p>
+<p class="fragment (appear)">
+\[Dm(f) = \left\{ x \in \mathbb{R} | x \neq 0 \right\}\]
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+\lim_{x\to 0^-} \left( x+\frac{1}{2}+\frac{1}{4x} \right) = - \infty \\
+\lim_{x\to 0^+} \left( x+\frac{1}{2}+\frac{1}{4x} \right) = + \infty \\
+\lim_{x\to \infty} \left( x+\frac{1}{2}+\frac{1}{4x} \right) = x + \frac{1}{2} \\
+\lim_{x\to -\infty} \left( x+\frac{1}{2}+\frac{1}{4x} \right) = x + \frac{1}{2}
+\end{align*}
+
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<ul>
+<li class="fragment appear">\(x=0\) er altså en lodret asymptote.</li>
+<li class="fragment appear">\(y = x + \frac{1}{2}\) er altså en skrå asymptote.</li>
+
+</ul>
+
+<div id="orgb16693e" class="figure">
+<p><img src="img/2020-09-22_09-51-53_csm_186_Fig-9-26_387_5904462edf.png" alt="2020-09-22_09-51-53_csm_186_Fig-9-26_387_5904462edf.png" class="fragment (appear)" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-org5995d3b" data-background="">
+<h3 id="org5995d3b">Opgave</h3>
+<p>
+Givet er funktionen
+</p>
+
+<p>
+\[f(x)=\frac{x^2+2x-1}{x+3}\]
+</p>
+
+<ol>
+<li>Bestem eventuelle lokale ekstrema.</li>
+<li>Bestem definitionsmængden.</li>
+<li>Bestem eventuelle asymptoter.</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-org752d52d" data-background="">
+<h2 id="org752d52d">Kurvetilpasning</h2>
+<div style="font-size: 60%;">
+<p>
+Vi vil gerne lade to (eller flere) funktioner glide "naturligt" over i hinanden.
+</p>
+<p class="fragment (appear)">
+De to funktioner skal altså have samme hældning i overgangspunktet.
+</p>
+</section>
+<section id="slide-org5da95b3" data-background="">
+<h3 id="org5da95b3">Eksempel</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Den lineære funktion \[f(x)= 2x +3\] skal sættes sammen med parablen \[g(x)=ax^2+bx +c\] ved \(x=3\), således at overgangen er glat. Yderligere skal parablen også have toppunkt i \(x=8\).
+</p>
+
+<ol>
+<li>Bestem forskriften for parablen.</li>
+
+</ol>
+</div>
+<p class="fragment (appear)">
+Hældningen for \(g(x)\) i \(x=3\) må være 2, altså
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+g'(x) &= 2 a x + b \\
+g'(3) &= 2 \\
+2\cdot a \cdot 3 + b &= 2
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Nu udnyttes oplysningen om toppunktet.
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+g'(8)&=0 \\
+2 \cdot a \cdot 8 + b = 0
+\end{align*}
+
+</div>
+<div class="column" style="float:right; width: 50%">
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<p>
+Nu kan de to ligninger med to ubekendte løses for \(a\) og \(b\)
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+2\cdot a \cdot 3 + b &= 2 & &(I) \\
+2 \cdot a \cdot 8 + b &= 0 & &(II)
+\end{align*}
+
+</div>
+
+<div class="org-src-container">
+
+<pre class="fragment (appear)">tex(float(solve([2*a*3+b=2,2*a*8+b=0],[a,b])));
+</pre>
+</div>
+
+<p class="fragment (appear)">
+\[\left[ \left[ a=-0.2 , b=3.2 \right]  \right] \]
+</p>
+
+<p class="fragment (appear)">
+Nu mangler vi at bestemme \(c\). Vi indsætter et kendt punkts koordinater i forskriften. I dette tilfælde \((3,f(3))=(3,9)\).
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+g(x) &= -0.2 \cdot x^2 + 3.2 \cdot x + c \\
+g(3) &= -0.2 \cdot 3^2 + 3.2 \cdot 3 + c = 9 \to\\
+c &= 9 + 0.2 \cdot 3^2 - 3.2 \cdot 3 \\
+c &= 1.2 
+\end{align*}
+
+</div>
+<p class="fragment (appear)">
+Den endelige forskrift for parablen er da:
+\[\boxed{g(x) = -0.2 \cdot x^2 + 3.2 \cdot x +1.2}\]
+</p>
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<p>
+Grafisk ser det således ud:
+</p>
+
+
+<div id="org960b083" class="figure">
+<p><img src="img/2020-09-22_15-41-17_screenshot.png" alt="2020-09-22_15-41-17_screenshot.png" width="600px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-org7d45600" data-background="">
+<h3 id="org7d45600">Opgave</h3>
+<div style="font-size: 50%;">
+<div class="column" style="float:left; width: 60%">
+<p>
+Et diges tværsnit kan modelleres som en stykkevis sammensat funktion bestående af to lineære funktioner og en parabel, som set på figuren. x-aksen symboliserer daglig vandstand.
+</p>
+<ul>
+<li>Linjestykket \(AB\) udgøres af en ret linje med en hældningsvinkel på \(45^{\circ}\).</li>
+<li>Linjestykket \(CD\) udgøres af en ret linje med en hældningsvinkel på \(153.43^{\circ}\).</li>
+<li>Delen \(BC\) udgøres af en parabelbue med tangentpunkter i \(B(3,3)\) og i \(C\), hvor \(x_C = 6\).</li>
+
+</ul>
+
+<p>
+Alle mål er i meter.
+</p>
+
+<ol>
+<li>Bestem en forskrift for alle tre delfunktioner.</li>
+<li>Bestem hvor høj vandstanden må være, før end vandet løbet over diget.</li>
+
+</ol>
+</div>
+
+<div class="column" style="float:right; width: 40%">
+
+<div id="org4a798ad" class="figure">
+<p><img src="img/2020-09-22_15-43-00_screenshot.png" alt="2020-09-22_15-43-00_screenshot.png" width="600px" />
+</p>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd9aac98" data-background="">
+<h2 id="orgd9aac98">Optimering</h2>
+<div style="font-size: 60%;">
+<ul>
+<li>Opstil matematiske modeller over problemet.</li>
+<li>Sammensæt en funktion med kun én variabel.</li>
+<li>Differentier, sæt lig nul og isoler x.</li>
+<li>Undersøg om der er tale om et maks eller min.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgf6ca726" data-background="">
+<h3 id="orgf6ca726">Eksempel</h3>
+<div style="font-size: 50%;">
+
+<div id="org8e4590d" class="figure">
+<p><img src="img/2020-09-22_16-07-16_screenshot.png" alt="2020-09-22_16-07-16_screenshot.png" width="600px" />
+</p>
+</div>
+<ul>
+<li class="fragment appear">Opstiller modeller</li>
+<li class="fragment appear">Areal: \(A=x\cdot y = 32 000\)</li>
+<li class="fragment appear">Samlet pris (omkreds ganget prisfaktor) \[P = 2\cdot y + x + 3x = 4x + 2y\]</li>
+
+</ul>
+
+</section>
+<section data-background="">
+<div style="font-size: 50%;">
+<p>
+Prisen ønskes minimeret, men afhænger af to variable.
+\[P(x,y) = 4x +2y\]
+</p>
+<ul>
+<li class="fragment appear">Isolerer (f.eks) \(y\) i udtrykket for arealet og indsætter dette i udtrykket for prisen.</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+A &= x \cdot y = 32 000 \to \\
+y &= \frac{32 000}{x} \\
+P(x) &= 4x + 2 \cdot \frac{32000}{x} \\
+P(x) &= 4x + \frac{64000}{x}
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Nu kan udtrykket for prisen differentieres, sættes lig nul, og det kan afgøres om der er tale om et maks eller et min.</li>
+
+</ul>
+<div class="fragment (appear)">
+\begin{align*}
+P'(x) &= 4  - \frac{64000}{x^2} \\
+P'(x) &= 4  - \frac{64000}{x^2} = 0 \to \\
+x &= \pm \sqrt{\frac{64000}{4}} \\
+x &= \pm 126.49
+\end{align*}
+
+</div>
+
+</section>
+<section data-background="">
+<div style="font-size: 50%;">
+<p>
+Det giver ikke mening at have en negativ længde, så dette resultat forkastes. Undersøger om der er tale om et maks eller et min.
+</p>
+<div>
+\begin{align*}
+P'(100) &= 4 - \frac{64000}{100^2} = - 2.4 \\
+P'(200) &= 4- \frac{64000}{200^2} = 2.4
+\end{align*}
+
+</div>
+<ul>
+<li class="fragment appear">Altså kan det ses, at \(x=126.49\) må være et minimum (som vi gerne vil have).</li>
+<li class="fragment appear">Det tilhørende \(y\) kan bestemmes fra udtrykket fra arealet \[y= \frac{32000}{126.49} = 252.98\]</li>
+<li class="fragment appear">Den optimale pris på hegnet er \[P(126.49) = 4\cdot 126.49 +\frac{64000}{126.49} = 1011.92\]</li>
+
+</ul>
+
+</section>
+<section id="slide-org667373a" data-background="">
+<h3 id="org667373a">Opgaver</h3>
+
+<div id="org477aae8" class="figure">
+<p><img src="img/2020-09-16_07-47-26_screenshot.png" alt="2020-09-16_07-47-26_screenshot.png" width="600px" />
+</p>
+</div>
+
+
+<div id="org975e480" class="figure">
+<p><img src="img/2020-09-16_07-48-04_screenshot.png" alt="2020-09-16_07-48-04_screenshot.png" width="600px" />
+</p>
+</div>
+
+</section>
+<section data-background="">
+
+
+<div id="org8d1ac8f" class="figure">
+<p><img src="img/2020-09-16_07-49-02_screenshot.png" alt="2020-09-16_07-49-02_screenshot.png" width="600px" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org186251b" data-background="">
+<h2 id="org186251b">Holmenkollbakken</h2>
+<div class="column" style="float:left; width: 50%">
+
+<div id="orgdb3102d" class="figure">
+<p><img src="img/2020-10-20_08-01-20_screenshot.png" alt="2020-10-20_08-01-20_screenshot.png" width="350px" />
+</p>
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org60ebb88" class="figure">
+<p><img src="img/2020-10-20_08-03-46_screenshot.png" alt="2020-10-20_08-03-46_screenshot.png" width="350px" />
+</p>
+</div>
+</div>
+
+</section>
+<section data-background="">
+<div class="column" style="float:left; width: 50%">
+
+<div id="org20fd631" class="figure">
+<p><img src="img/2020-10-20_08-04-19_screenshot.png" alt="2020-10-20_08-04-19_screenshot.png" width="400px" />
+</p>
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org45951ce" class="figure">
+<p><img src="img/2020-10-20_08-04-48_screenshot.png" alt="2020-10-20_08-04-48_screenshot.png" width="400px" />
+</p>
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org668da7e" data-background="">
+<h2 id="org668da7e">5 min fordybelse</h2>
+<ul>
+<li>Nedskriv dine egne refleksioner over dagens undervisning.</li>
+<li>Foregår i tavshed.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: false,
+slideNumber: 'c/t',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'slide',
+transitionSpeed: 'default',
+slideNumber:"c/t",progress:true,transition:"slide",navigationMode:"default",history:false,hash:true,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
