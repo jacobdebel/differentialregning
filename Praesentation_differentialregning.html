@@ -3,43 +3,41 @@
 <head>
 <meta charset="utf-8"/>
 <title>Differentialregning for let øvede</title>
-<meta name="author" content="Vibenshus Gymnasium"/>
+<meta name="author" content="Jacob Debel"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/sky.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/night.css" id="theme"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h2>Differentialregning for let øvede</h2><h3>Matematik A</h3><h4>Vibenshus Gymnasium</h4><h4></h4>
+<h2>Differentialregning for let øvede</h2><h3>Matematik</h3><h4>Jacob Debel</h4><h4></h4>
 </section>
-
-
 <section>
-<section id="slide-orgaafd213" data-background="">
-<h2 id="orgaafd213">Grænseværdier</h2>
-<div class="outline-text-2" id="text-orgaafd213">
+<section id="slide-org64c918c" data-background="">
+<h2 id="org64c918c">Grænseværdier</h2>
+<div class="outline-text-2" id="text-org64c918c">
 </div>
 </section>
-<section id="slide-orgddc3ae2" data-background="">
-<h3 id="orgddc3ae2">Arealet af en cirkel?</h3>
+<section id="slide-org0b2d481" data-background="">
+<h3 id="org0b2d481">Arealet af en cirkel?</h3>
 <p>
 \[A=\pi \cdot r^2\]
 </p>
 
 
-<div id="orge1f04f3" class="figure">
+<div id="orgbc8fb1c" class="figure">
 <p><img src="img/2020-09-07_08-31-26_screenshot.png" alt="2020-09-07_08-31-26_screenshot.png" width="400px" />
 </p>
 </div>
 </section>
-<section id="slide-org50a4a30" data-background="">
-<h3 id="org50a4a30">Approksimeret som trekanter</h3>
+<section id="slide-orgc835531" data-background="">
+<h3 id="orgc835531">Approksimeret som trekanter</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -59,15 +57,14 @@ Arealet af 8 trekanter
 <div class="column" style="float:right; width: 50%">
 
 
-<div id="org6a99be3" class="figure">
+<div id="orgd432c17" class="figure">
 <p><img src="img/2020-09-07_08-36-04_screenshot.png" alt="2020-09-07_08-36-04_screenshot.png" width="600px" />
 </p>
 </div>
 </div>
-
 </section>
-<section id="slide-org2a2ed56" data-background="">
-<h3 id="org2a2ed56">Approksimeret som trekanter</h3>
+<section id="slide-org64f28db" data-background="">
+<h3 id="org64f28db">Approksimeret som trekanter</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -79,15 +76,14 @@ Eller 16 trekanter
 <div class="column" style="float:right; width: 50%">
 
 
-<div id="org1870425" class="figure">
+<div id="org349fb65" class="figure">
 <p><img src="img/2020-09-07_08-43-37_screenshot.png" alt="2020-09-07_08-43-37_screenshot.png" width="600px" />
 </p>
 </div>
 </div>
-
 </section>
-<section id="slide-orgb677583" data-background="">
-<h3 id="orgb677583">Approksimeret som trekanter</h3>
+<section id="slide-org26f2abb" data-background="">
+<h3 id="org26f2abb">Approksimeret som trekanter</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -104,15 +100,14 @@ Hvad sker der, når \(n \to \infty\)?
 
 <div class="column" style="float:right; width: 50%">
 
-<div id="org136424a" class="figure">
+<div id="org63ddc91" class="figure">
 <p><img src="img/2020-09-07_08-43-37_screenshot.png" alt="2020-09-07_08-43-37_screenshot.png" width="600px" />
 </p>
 </div>
 </div>
-
 </section>
-<section id="slide-orgea73fa4" data-background="">
-<h3 id="orgea73fa4">Was bedeutet das?</h3>
+<section id="slide-orga738742" data-background="">
+<h3 id="orga738742">Was bedeutet das?</h3>
 <div style="font-size: 60%;">
 <p>
 \[\boxed{A =  \lim_{n\to \infty} \left(n \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right)\right)}\]
@@ -123,10 +118,9 @@ Hvad sker der, når \(n \to \infty\)?
 <li>\(\lim_{n \to \infty}\) udtales: "grænseværdien når n går mod uendeligt".</li>
 
 </ul>
-
 </section>
-<section id="slide-orga005ee3" data-background="">
-<h3 id="orga005ee3">Regneregler for grænseværdier</h3>
+<section id="slide-org969c05c" data-background="">
+<h3 id="org969c05c">Regneregler for grænseværdier</h3>
 <div style="font-size: 60%;">
 <div>
 \begin{align*}
@@ -139,10 +133,9 @@ Hvad sker der, når \(n \to \infty\)?
 \end{align*}
 
 </div>
-
 </section>
-<section id="slide-org58185a2" data-background="">
-<h3 id="org58185a2">Opgaver</h3>
+<section id="slide-org2b61499" data-background="">
+<h3 id="org2b61499">Opgaver</h3>
 <div style="font-size: 60%;">
 <p>
 Bestem følgende grænseværdier
@@ -171,14 +164,13 @@ Bestem følgende grænseværdier
 
 </ol>
 </div>
-
 </section>
-<section id="slide-orgdc5a41a" data-background="">
-<h3 id="orgdc5a41a">Tilbage til cirklen</h3>
+<section id="slide-org226db35" data-background="">
+<h3 id="org226db35">Tilbage til cirklen</h3>
 <div style="font-size: 60%;">
 
 
-<div id="org68ae6b4" class="figure">
+<div id="org65a08c4" class="figure">
 <p><img src="img/2020-09-07_08-43-37_screenshot.png" alt="2020-09-07_08-43-37_screenshot.png" width="400px" />
 </p>
 </div>
@@ -186,10 +178,9 @@ Bestem følgende grænseværdier
 <p>
 \[\boxed{A =  \lim_{n\to \infty} \left(n \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right)\right)}\]
 </p>
-
 </section>
-<section id="slide-org6eaef6f" data-background="">
-<h3 id="org6eaef6f">Tilbage til cirklen</h3>
+<section id="slide-org3d48485" data-background="">
+<h3 id="org3d48485">Tilbage til cirklen</h3>
 <div style="font-size: 60%;">
 <p>
 \[A =  \lim_{n\to \infty} \left(n \cdot \frac{1}{2} \cdot r^2 \cdot \sin \left( \frac{2 \pi}{n} \right)\right)\]
@@ -216,10 +207,9 @@ Naivt forsøg
 <p class="fragment (appear)">
 <b>Hmm&#x2026; Vi må prøve noget andet</b>
 </p>
-
 </section>
-<section id="slide-org26c5168" data-background="">
-<h3 id="org26c5168">Noget andet</h3>
+<section id="slide-orgf790ed8" data-background="">
+<h3 id="orgf790ed8">Noget andet</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p class="fragment (appear)">
@@ -259,10 +249,9 @@ Ahh, i stedet for \(\lim_{n \to \infty}\) skrives \(\lim_{\phi \to 0}\)
 \[\lim_{n \to \infty} \left( n \cdot \sin \left( \frac{2 \pi}{n} \right) \right) = \lim_{\phi \to 0} \left( \frac{2 \pi}{\phi} \cdot \sin \left( \phi \right) \right)\]
 </p>
 </div>
-
 </section>
-<section id="slide-orgad2d399" data-background="">
-<h3 id="orgad2d399">Noget andet</h3>
+<section id="slide-orge0c0a3f" data-background="">
+<h3 id="orge0c0a3f">Noget andet</h3>
 <div style="font-size: 60%;">
 <p>
 \[\lim_{\phi \to 0} \left( \frac{2 \pi}{\phi}\cdot \sin \left( \phi \right) \right) = 2 \pi \cdot \lim_{\phi \to 0} \left( \frac{\sin \left( \phi \right)}{\phi} \right)\]
@@ -284,10 +273,9 @@ Vi skal altså nu "bare" vise at \(\lim_{\phi \to 0} \left( \frac{\sin \left( \p
 <p class="fragment (appear)">
 Brug af CAS-værktøj (Maxima)
 </p>
-
 </section>
-<section id="slide-org7068d3d" data-background="">
-<h3 id="org7068d3d"><del>TRYLLE, TRYLLE, TRYLLE</del></h3>
+<section id="slide-orgb2cc760" data-background="">
+<h3 id="orgb2cc760"><del>TRYLLE, TRYLLE, TRYLLE</del></h3>
 <div style="font-size: 60%;">
 <p class="fragment (appear)">
 Nej ikke flere tryllerier i denne omgang.
@@ -298,10 +286,9 @@ Vi må undersøge grænseværdien på en anden måde.
 <p class="fragment (appear)">
 <b>Vi kan bruge L'Hôpitals regler.</b>
 </p>
-
 </section>
-<section id="slide-orga5e7999" data-background="">
-<h3 id="orga5e7999">L'Hôpitals regler</h3>
+<section id="slide-org3f33069" data-background="">
+<h3 id="org3f33069">L'Hôpitals regler</h3>
 <div style="font-size: 50%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -331,10 +318,9 @@ eksisterer. Da gælder
 </p>
 
 </div>
-
 </section>
-<section id="slide-orgddbee1e" data-background="">
-<h3 id="orgddbee1e">Opgaver</h3>
+<section id="slide-org63afd1b" data-background="">
+<h3 id="org63afd1b">Opgaver</h3>
 <div style="font-size: 60%;">
 <p>
 Brug L'Hôpitals regler til at bestemme følgende grænseværdier:
@@ -359,10 +345,9 @@ Brug L'Hôpitals regler til at bestemme følgende grænseværdier:
 
 </ol>
 </div>
-
 </section>
-<section id="slide-orgfecc249" data-background="">
-<h3 id="orgfecc249">Noget andet&#x2026; igen</h3>
+<section id="slide-orgee03348" data-background="">
+<h3 id="orgee03348">Noget andet&#x2026; igen</h3>
 <div style="font-size: 60%;">
 <p>
 \[\lim_{\phi \to 0} \left( \frac{2 \pi}{\phi}\cdot \sin \left( \phi \right) \right) = 2 \pi \cdot \lim_{\phi \to 0} \left( \frac{\sin \left( \phi \right)}{\phi} \right)\]
@@ -382,23 +367,20 @@ Vi kan altså bruge L'Hôpitals 0/0-regel
 <p class="fragment (appear)">
 <b>HURRA, det virker&#x2026; Men det er også lidt snyd. Vi kan jo i princippet ikke <i>differentiere</i> endnu&#x2026;</b>
 </p>
-
 </section>
-<section id="slide-org7be4a02" data-background="">
-<h3 id="org7be4a02">Noget andet andet</h3>
+<section id="slide-org288558d" data-background="">
+<h3 id="org288558d">Noget andet andet</h3>
 <div style="font-size: 60%;">
 <p>
 Vi må hellere tage et geometrisk/trigonometrisk bevis i stedet for&#x2026;
 </p>
-
 </section>
-<section id="slide-org4d5deda" data-background="">
-<h3 id="org4d5deda">Tadaa! - Khan academy to the rescue</h3>
+<section id="slide-org10b7af1" data-background="">
+<h3 id="org10b7af1">Tadaa! - Khan academy to the rescue</h3>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/5xitzTutKqM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 </section>
-<section id="slide-org1fc02c9" data-background="">
-<h3 id="org1fc02c9">Endelig - arealet af en cirkel</h3>
+<section id="slide-org6812f05" data-background="">
+<h3 id="org6812f05">Endelig - arealet af en cirkel</h3>
 <div style="font-size: 40%;">
 <div class="column" style="float:left; width: 70%">
 <p class="fragment (appear)">
@@ -423,22 +405,21 @@ Vi må hellere tage et geometrisk/trigonometrisk bevis i stedet for&#x2026;
 
 <div class="column" style="float:right; width: 30%">
 
-<div id="org1f78415" class="figure">
+<div id="org159c2f9" class="figure">
 <p><img src="img/2020-09-07_08-43-37_screenshot.png" alt="2020-09-07_08-43-37_screenshot.png" width="400px" />
 </p>
 </div>
 </div>
-
 </section>
 </section>
 <section>
-<section id="slide-org27607ab" data-background="">
-<h2 id="org27607ab">Kontinuitet</h2>
-<div class="outline-text-2" id="text-org27607ab">
+<section id="slide-org8de7a74" data-background="">
+<h2 id="org8de7a74">Kontinuitet</h2>
+<div class="outline-text-2" id="text-org8de7a74">
 </div>
 </section>
-<section id="slide-orga0a390f" data-background="">
-<h3 id="orga0a390f">Kontinuitet</h3>
+<section id="slide-org68988f9" data-background="">
+<h3 id="org68988f9">Kontinuitet</h3>
 <div style="font-size: 60%;">
 <blockquote>
 <p>
@@ -462,15 +443,14 @@ En funktion siges at være kontinuert i hele dens definitionsmængde \(Dm(f)\), 
 <li>\(\lim_{x \to a^+}\) betyder at x nærmer sig a fra højre side.</li>
 
 </ul>
-
 </section>
-<section id="slide-orgb0bac50" data-background="">
-<h3 id="orgb0bac50">Eksempler</h3>
-<div class="outline-text-3" id="text-orgb0bac50">
+<section id="slide-orgec97fe1" data-background="">
+<h3 id="orgec97fe1">Eksempler</h3>
+<div class="outline-text-3" id="text-orgec97fe1">
 </div>
 </section>
-<section id="slide-orgc9f0cbf" data-background="">
-<h4 id="orgc9f0cbf">Eksempel 1</h4>
+<section id="slide-org08210e2" data-background="">
+<h4 id="org08210e2">Eksempel 1</h4>
 <div style="font-size: 60%;">
 <p>
 Vi har følgende gaffelfunktion
@@ -487,10 +467,9 @@ Vi skal tjekke om den er kontinuert.
 <p class="fragment (appear)">
 Yes, den er kontinuert.
 </p>
-
 </section>
-<section id="slide-orgbfd4cff" data-background="">
-<h4 id="orgbfd4cff">Eksempel 2</h4>
+<section id="slide-org09717aa" data-background="">
+<h4 id="org09717aa">Eksempel 2</h4>
 <div style="font-size: 60%;">
 <p>
 Nu har vi funktionen
@@ -516,10 +495,9 @@ Vi tjekker da
 <p class="fragment (appear)">
 Nej, funktionen er ikke kontinuert i \(x=0\). (For alle andre værdier af x er den).
 </p>
-
 </section>
-<section id="slide-orga36b0b1" data-background="">
-<h4 id="orga36b0b1">Opgaver</h4>
+<section id="slide-org99632e3" data-background="">
+<h4 id="org99632e3">Opgaver</h4>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -573,31 +551,29 @@ j(x) &= x \cdot \cos \left( x \right)
 
 </div>
 </div>
-
 </section>
 </section>
 <section>
-<section id="slide-orgd231a66" data-background="">
-<h2 id="orgd231a66">Sekanter og <i>differenskvotienter</i></h2>
-<div class="outline-text-2" id="text-orgd231a66">
+<section id="slide-orgae7ebb7" data-background="">
+<h2 id="orgae7ebb7">Sekanter og <i>differenskvotienter</i></h2>
+<div class="outline-text-2" id="text-orgae7ebb7">
 </div>
 </section>
-<section id="slide-org91426a4" data-background="">
-<h3 id="org91426a4">Sekant</h3>
+<section id="slide-orgfd63dc6" data-background="">
+<h3 id="orgfd63dc6">Sekant</h3>
 <blockquote>
 <p>
 En sekant er en ret linje, der skærer en kurve i to punkter.
 </p>
 </blockquote>
 
-<div id="org65773d2" class="figure">
+<div id="orgfa847fc" class="figure">
 <p><img src="img/2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" alt="2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" width="400px" />
 </p>
 </div>
-
 </section>
-<section id="slide-orgbe95da7" data-background="">
-<h3 id="orgbe95da7">Sekant</h3>
+<section id="slide-org7857778" data-background="">
+<h3 id="org7857778">Sekant</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <ul>
@@ -616,15 +592,14 @@ En sekant er en ret linje, der skærer en kurve i to punkter.
 
 <div class="column" style="float:right; width: 50%">
 
-<div id="org0dcd327" class="figure">
+<div id="org1e4d7a4" class="figure">
 <p><img src="img/2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" alt="2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" width="400px" />
 </p>
 </div>
 </div>
-
 </section>
-<section id="slide-org6b1ea48" data-background="">
-<h3 id="org6b1ea48">Differenskvotienten</h3>
+<section id="slide-org9691b7a" data-background="">
+<h3 id="org9691b7a">Differenskvotienten</h3>
 <div style="font-size: 70%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -638,22 +613,21 @@ Differenskvotienten er også <i>gennemsnitshældningen</i> for grafen mellem to 
 
 <div class="column" style="float:right; width: 50%">
 
-<div id="orga582335" class="figure">
+<div id="org1873bc7" class="figure">
 <p><img src="img/2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" alt="2020-09-10_08-42-57_csm_170_sekant_a25bf554ce.png" width="400px" />
 </p>
 </div>
 </div>
-
 </section>
 </section>
 <section>
-<section id="slide-orgaca7c7b" data-background="">
-<h2 id="orgaca7c7b">Tangenter og <i>differentialkvotienter</i></h2>
-<div class="outline-text-2" id="text-orgaca7c7b">
+<section id="slide-org76d8b48" data-background="">
+<h2 id="org76d8b48">Tangenter og <i>differentialkvotienter</i></h2>
+<div class="outline-text-2" id="text-org76d8b48">
 </div>
 </section>
-<section id="slide-org56ef10b" data-background="">
-<h3 id="org56ef10b">Fra differens til differential</h3>
+<section id="slide-orgf4f04c7" data-background="">
+<h3 id="orgf4f04c7">Fra differens til differential</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <ul>
@@ -667,14 +641,14 @@ Differenskvotienten er også <i>gennemsnitshældningen</i> for grafen mellem to 
 
 <div class="column" style="float:right; width: 50%">
 
-<div id="orgf78bfb2" class="figure">
+<div id="org1a96336" class="figure">
 <p><a href="./Sekanter_og_tangenter.ggb"><img src="img/2020-09-10_09-11-51_screenshot.png" alt="2020-09-10_09-11-51_screenshot.png" /></a>
 </p>
 </div>
 </div>
 </section>
-<section id="slide-orgfeeeff9" data-background="">
-<h3 id="orgfeeeff9">Differentialkvotient</h3>
+<section id="slide-orgf4b61e3" data-background="">
+<h3 id="orgf4b61e3">Differentialkvotient</h3>
 <div style="font-size: 60%;">
 <p>
 Matematisk skrives differentialkvotienten på følgende måde:
@@ -689,14 +663,14 @@ Matematisk skrives differentialkvotienten på følgende måde:
 </section>
 </section>
 <section>
-<section id="slide-org3f19553" data-background="">
-<h2 id="org3f19553">Tretrinsreglen</h2>
+<section id="slide-orga569dfb" data-background="">
+<h2 id="orga569dfb">Tretrinsreglen</h2>
 <p>
 For at bestemme differentialkvotienter benyttes typisk tre trin.
 </p>
 </section>
-<section id="slide-org5429e17" data-background="">
-<h3 id="org5429e17">Trin 1</h3>
+<section id="slide-org4699bf7" data-background="">
+<h3 id="org4699bf7">Trin 1</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -715,21 +689,21 @@ Differenskvotienten er dermed identisk med hældningen af sekanten mellem punkte
 <div class="column" style="float:right; width: 50%">
 
 
-<div id="orga365a52" class="figure">
+<div id="org5ec17b3" class="figure">
 <p><img src="img/2020-09-10_09-37-48_csm_174_tretrin_d974458908.png" alt="2020-09-10_09-37-48_csm_174_tretrin_d974458908.png" width="600px" />
 </p>
 </div>
 
 </div>
 </section>
-<section id="slide-org1edc0a2" data-background="">
-<h3 id="org1edc0a2">Trin 2</h3>
+<section id="slide-org520e270" data-background="">
+<h3 id="org520e270">Trin 2</h3>
 <p>
 Omskriv differenskvotienten, således at trin 3 bliver lettere at gennemføre.
 </p>
 </section>
-<section id="slide-org13b68bb" data-background="">
-<h3 id="org13b68bb">Trin 3</h3>
+<section id="slide-orge3910cb" data-background="">
+<h3 id="orge3910cb">Trin 3</h3>
 <div style="font-size: 70%;">
 <p>
 Bestem grænseværdien for differenskvotienten når \(\Delta x \to 0\).
@@ -747,15 +721,15 @@ f'(x) &= \frac{d f}{dx} = \lim_{\Delta x \to 0} \left( \frac{\Delta f}{\Delta x}
 Hvis denne grænseværdi eksistere for alle \(x\) i difinitionsmængden er funktionen generelt <i>differentiabel</i>. Hvis grænseværdien kun eksistere i udvalgte punkter, er funktionen ikke generelt differentiabel, men kun differentiabel i disse punkter.
 </p>
 </section>
-<section id="slide-org42b322c" data-background="">
-<h3 id="org42b322c">Eksempel</h3>
+<section id="slide-orga644a06" data-background="">
+<h3 id="orga644a06">Eksempel</h3>
 <div style="font-size: 60%;">
 <p>
 Lad os bestemme \(\frac{df}{dx}\) for et vilkårlig \(x\) for \(f(x)=-x^2+2\).
 </p>
 </section>
-<section id="slide-org79da8ad" data-background="">
-<h4 id="org79da8ad">Trin 1</h4>
+<section id="slide-orgc562f85" data-background="">
+<h4 id="orgc562f85">Trin 1</h4>
 <div style="font-size: 60%;">
 <p>
 Differenskvotient
@@ -769,8 +743,8 @@ Differenskvotient
 
 </div>
 </section>
-<section id="slide-org0298d8a" data-background="">
-<h4 id="org0298d8a">Trin 2</h4>
+<section id="slide-orgf98d1c9" data-background="">
+<h4 id="orgf98d1c9">Trin 2</h4>
 <div style="font-size: 60%;">
 <p>
 Omskriv differenskvotienten så meget som muligt
@@ -786,8 +760,8 @@ Omskriv differenskvotienten så meget som muligt
 
 </div>
 </section>
-<section id="slide-orgad34434" data-background="">
-<h4 id="orgad34434">Trin 3</h4>
+<section id="slide-org268842f" data-background="">
+<h4 id="org268842f">Trin 3</h4>
 <div style="font-size: 60%;">
 <p>
 Bestem grænseværdien
@@ -802,8 +776,8 @@ f'(x) &= \frac{df}{dx} \\
 
 </div>
 </section>
-<section id="slide-orgbb6daef" data-background="">
-<h3 id="orgbb6daef">Opgaver</h3>
+<section id="slide-orgcb72ade" data-background="">
+<h3 id="orgcb72ade">Opgaver</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -842,17 +816,16 @@ ved hjælp af tretrinsreglen.
 (Hint: Når I har skrevet <i>differenskvotienten</i> op, skal I på et tidspunkt i trin 2 gange med det "smarte" et-tal, \(1=\frac{\sqrt{x+\Delta x}+\sqrt{x}}{\sqrt{x+\Delta x}+\sqrt{x}}\)).
 </p>
 </div>
-
 </section>
 </section>
 <section>
-<section id="slide-orga4491ce" data-background="">
-<h2 id="orga4491ce">Beviser for regneregler</h2>
-<div class="outline-text-2" id="text-orga4491ce">
+<section id="slide-orgacfc492" data-background="">
+<h2 id="orgacfc492">Beviser for regneregler</h2>
+<div class="outline-text-2" id="text-orgacfc492">
 </div>
 </section>
-<section id="slide-orgd1345f4" data-background="">
-<h3 id="orgd1345f4">Differentiation af konstant</h3>
+<section id="slide-orgfe436c8" data-background="">
+<h3 id="orgfe436c8">Differentiation af konstant</h3>
 <div style="font-size: 60%;">
 <p>
 For \(f(x)= a\), hvor \(a\) er en konstant gælder at
@@ -863,8 +836,8 @@ For \(f(x)= a\), hvor \(a\) er en konstant gælder at
 (Hint: Opskriv differenskvotienten og se at den giver nul, og dermed på differentialkvotienten også være nul.)
 </p>
 </section>
-<section id="slide-org353be50" data-background="">
-<h3 id="org353be50">Differentiation af led</h3>
+<section id="slide-org6e92e25" data-background="">
+<h3 id="org6e92e25">Differentiation af led</h3>
 <div style="font-size: 60%;">
 <p>
 For \(f(x) = g(x) \pm h(x)\) gælder at
@@ -875,10 +848,9 @@ Man kan altså differentiere hvert led for sig.
 <p>
 (Hint: Skriv differentialkvotienten op for \(f(x)\) vha tretrinsreglen, flyt rundt på leddene og anvend regnereglerne for grænseværdier.)
 </p>
-
 </section>
-<section id="slide-org730037d" data-background="">
-<h3 id="org730037d">Konstant gange funktion</h3>
+<section id="slide-org63f352f" data-background="">
+<h3 id="org63f352f">Konstant gange funktion</h3>
 <div style="font-size: 60%;">
 <p>
 For \(f(x) = k \cdot g(x)\) gælder at
@@ -888,10 +860,9 @@ For \(f(x) = k \cdot g(x)\) gælder at
 <p>
 (Hint: Skriv differentialkvotienten op for \(f(x)\) vha tretrinsreglen, sæt noget uden for parentes og anvend regnereglerne for grænseværdier.)
 </p>
-
 </section>
-<section id="slide-orgd5efef7" data-background="">
-<h3 id="orgd5efef7">Produkt og kvotient</h3>
+<section id="slide-orgb0394a8" data-background="">
+<h3 id="orgb0394a8">Produkt og kvotient</h3>
 <div style="font-size: 50%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -928,25 +899,23 @@ Det andet makkerpar skal bevise dette.
 (Hint: Opskriv først differenskvotienten på vanlig vis. Find fællesnævner. Indsæt det "smarte" nul \(0=g(x)\cdot h(x) - g(x)\cdot h(x)\).)
 </p>
 </div>
-
 </section>
-<section id="slide-org12e0f1b" data-background="">
-<h3 id="org12e0f1b">Opgaver</h3>
+<section id="slide-orga4f95be" data-background="">
+<h3 id="orga4f95be">Opgaver</h3>
 
-<div id="orgaf33fe1" class="figure">
+<div id="org2418606" class="figure">
 <p><img src="img/2020-09-16_07-37-17_screenshot.png" alt="2020-09-16_07-37-17_screenshot.png" width="400px" />
 </p>
 </div>
 
 
-<div id="orgfd72108" class="figure">
+<div id="org503448a" class="figure">
 <p><img src="img/2020-09-16_07-40-25_screenshot.png" alt="2020-09-16_07-40-25_screenshot.png" width="400px" />
 </p>
 </div>
-
 </section>
-<section id="slide-org4a5507c" data-background="">
-<h3 id="org4a5507c">Kædereglen</h3>
+<section id="slide-orgdf8821b" data-background="">
+<h3 id="orgdf8821b">Kædereglen</h3>
 <div style="font-size: 50%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -997,10 +966,9 @@ For \(f(x) = g(h(x))\) gælder at
 
 </div>
 </div>
-
 </section>
-<section id="slide-org57d90cf" data-background="">
-<h3 id="org57d90cf">Kædereglen - fortsat</h3>
+<section id="slide-org8acab05" data-background="">
+<h3 id="org8acab05">Kædereglen - fortsat</h3>
 <div style="font-size: 50%;">
 <div>
 \begin{align*}
@@ -1034,10 +1002,9 @@ f'(x) = \lim_{\Delta x \to 0}\left(\frac{\Delta f}{\Delta x}\right) &=\lim_{\Del
 <p class="fragment (appear)">
 \[f'(x) = \lim_{\Delta x \to 0}\left(\frac{\Delta f}{\Delta x}\right)=\boxed{\lim_{\Delta h \to 0}} \left( \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta h} \right) \cdot \lim_{\Delta x \to 0} \left( \frac{h(x+\Delta x) - h(x)}{\Delta x} \right)\]
 </p>
-
 </section>
-<section id="slide-orgf29b375" data-background="">
-<h3 id="orgf29b375">Kædereglen - fortsat</h3>
+<section id="slide-org8c5c667" data-background="">
+<h3 id="org8c5c667">Kædereglen - fortsat</h3>
 <div style="font-size: 50%;">
 <p>
 \[f'(x) = \lim_{\Delta x \to 0}\left(\frac{\Delta f}{\Delta x}\right)=\lim_{\Delta h \to 0}\left( \frac{g(h(x)+\Delta h) - g(h(x))}{\Delta h} \right) \cdot \lim_{\Delta x \to 0} \left( \frac{h(x+\Delta x) - h(x)}{\Delta x} \right)\]
@@ -1049,25 +1016,23 @@ f'(x) = \lim_{\Delta x \to 0}\left(\frac{\Delta f}{\Delta x}\right) &=\lim_{\Del
 <p class="fragment (appear)">
 \[f'(x) = \frac{d g}{d h} \cdot \frac{d h}{dx} = g'(h)\cdot h'(x)\]
 </p>
-
 </section>
-<section id="slide-org75dbed8" data-background="">
-<h3 id="org75dbed8">Opgaver</h3>
+<section id="slide-org15faa78" data-background="">
+<h3 id="org15faa78">Opgaver</h3>
 
-<div id="org8035ae6" class="figure">
+<div id="orgf373d2f" class="figure">
 <p><img src="img/2020-09-16_07-39-08_screenshot.png" alt="2020-09-16_07-39-08_screenshot.png" width="400px" />
 </p>
 </div>
 
 
-<div id="org65655fe" class="figure">
+<div id="orga4a49ce" class="figure">
 <p><img src="img/2020-09-16_07-41-58_screenshot.png" alt="2020-09-16_07-41-58_screenshot.png" width="400px" />
 </p>
 </div>
-
 </section>
-<section id="slide-org3730387" data-background="">
-<h3 id="org3730387">Den naturlige eksponentialfunktion</h3>
+<section id="slide-orgbff8d7d" data-background="">
+<h3 id="orgbff8d7d">Den naturlige eksponentialfunktion</h3>
 <div style="font-size: 60%;">
 <p>
 For \(f(x) = e^x\) gælder at \[\boxed{f'(x)=e^x}\]
@@ -1080,10 +1045,9 @@ Den naturlige eksponentialfunktion er den <b>eneste</b> funktion, som giver sig 
 <p class="fragment (appear)">
 Inden vi skal se på, hvordan dette er udledt, skal vi lige se på, hvad Eulers tal, \(e\), egentlig er for en størrelse.
 </p>
-
 </section>
-<section id="slide-orgecac840" data-background="">
-<h4 id="orgecac840">Eulers tal</h4>
+<section id="slide-org864c3ed" data-background="">
+<h4 id="org864c3ed">Eulers tal</h4>
 <div style="font-size: 60%;">
 <p>
 Første gang fundet af Jacob Bernoulli i 1683 i forbindelse med beregning af renters rente.
@@ -1104,8 +1068,8 @@ Renten må være det halve, mens der nu er to terminer
 \[1 \cdot (1 + 0.5)^2 = 2.25\]
 </p>
 </section>
-<section id="slide-orge4f9e0a" data-background="">
-<h4 id="orge4f9e0a">Eulers tal - fortsat</h4>
+<section id="slide-org680fd06" data-background="">
+<h4 id="org680fd06">Eulers tal - fortsat</h4>
 <div style="font-size: 60%;">
 <p>
 eller hvert kvartal?
@@ -1125,24 +1089,22 @@ Jo, da.
 <p class="fragment (appear)">
 \[1 \cdot \left( 1 + \frac{1}{n} \right)^n\] Renten udgør nu en n'te-del mens antallet af terminer er n.
 </p>
-
 </section>
-<section id="slide-org4de793e" data-background="">
-<h4 id="org4de793e">Eulers tal - fortsat</h4>
+<section id="slide-orgd34f383" data-background="">
+<h4 id="orgd34f383">Eulers tal - fortsat</h4>
 <div style="font-size: 60%;">
 <p>
 Hvad sker der, når \(n\) vokser?
 </p>
 
 
-<div id="org2a5a624" class="figure">
+<div id="org6836332" class="figure">
 <p><a href="./Eulers_tal_som_graensevaerdi.ggb" width="600px"><img src="img/2020-09-15_13-07-02_screenshot.png" alt="2020-09-15_13-07-02_screenshot.png" width="600px" /></a>
 </p>
 </div>
-
 </section>
-<section id="slide-org74814b5" data-background="">
-<h4 id="org74814b5">Eulers tal - fortsat</h4>
+<section id="slide-org2d0d3e4" data-background="">
+<h4 id="org2d0d3e4">Eulers tal - fortsat</h4>
 <div style="font-size: 60%;">
 <p>
 Det nærmer sig altså en fast værdi. Denne værdi er <i>Eulers</i> tal.
@@ -1163,10 +1125,9 @@ En alternativ måde at skrive det på er \(m=\frac{1}{n}\), så \(m \to 0\) for 
 <p class="fragment (appear)">
 \[e = \lim_{m \to 0} \left( \left( 1 + m \right)^{\frac{1}{m}} \right)\]
 </p>
-
 </section>
-<section id="slide-orgfb98d7e" data-background="">
-<h3 id="orgfb98d7e">Den naturlige logaritme</h3>
+<section id="slide-orgffff97e" data-background="">
+<h3 id="orgffff97e">Den naturlige logaritme</h3>
 <div style="font-size: 50%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -1208,10 +1169,9 @@ Så indføres variablen \(n= \frac{\Delta x}{x}\), hvorfra \(\frac{1}{\Delta x} 
 
 </div>
 </div>
-
 </section>
-<section id="slide-orgb45c29b" data-background="">
-<h3 id="orgb45c29b">Den naturlige logaritme - fortsat</h3>
+<section id="slide-org20a4df5" data-background="">
+<h3 id="org20a4df5">Den naturlige logaritme - fortsat</h3>
 <div style="font-size: 45%;">
 <div class="column" style="float:left; width: 30%">
 <div>
@@ -1258,8 +1218,8 @@ Det sidste skridt udnytter at den naturlige logaritme og den naturlige eksponent
 </p>
 </div>
 </section>
-<section id="slide-orgb73692b" data-background="">
-<h3 id="orgb73692b">\(e^x\) igen</h3>
+<section id="slide-orgd419db8" data-background="">
+<h3 id="orgd419db8">\(e^x\) igen</h3>
 <div style="font-size: 50%;">
 <p>
 Nu kan det "nemt" bevises at for \[f(x) =e^x \text{ er } f'(x) = e^x\]
@@ -1285,10 +1245,9 @@ x &= x \\
 \end{align*}
 
 </div>
-
 </section>
-<section id="slide-orgd99e307" data-background="">
-<h3 id="orgd99e307">Opgaver</h3>
+<section id="slide-org548af1c" data-background="">
+<h3 id="org548af1c">Opgaver</h3>
 <div style="font-size: 60%;">
 <p>
 Differentier funktionerne
@@ -1302,8 +1261,8 @@ Differentier funktionerne
 
 </ol>
 </section>
-<section id="slide-orgf8d9cb6" data-background="">
-<h3 id="orgf8d9cb6">Potensreglen</h3>
+<section id="slide-orge9f39c1" data-background="">
+<h3 id="orge9f39c1">Potensreglen</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -1332,8 +1291,8 @@ Men først udnyttes at \[x^n = \left( e^{\ln(x)} \right)^n = e^{n \cdot \ln(x)}\
 </div>
 </div>
 </section>
-<section id="slide-orgf013db9" data-background="">
-<h3 id="orgf013db9">Opgaver</h3>
+<section id="slide-orge08b1bf" data-background="">
+<h3 id="orge08b1bf">Opgaver</h3>
 <div style="font-size: 60%;">
 <p>
 Nu er I efterhånden eksperter, så differentier lige følgende funktioner "i hånden"
@@ -1345,12 +1304,11 @@ Nu er I efterhånden eksperter, så differentier lige følgende funktioner "i h�
 <li>\(f(x) = \tan \left( \cos \left( x^2 \right) \right)\)</li>
 
 </ol>
-
 </section>
 </section>
 <section>
-<section id="slide-org07aaa54" data-background="">
-<h2 id="org07aaa54">Videoer med beviser</h2>
+<section id="slide-orgca524c5" data-background="">
+<h2 id="orgca524c5">Videoer med beviser</h2>
 <div style="font-size: 60%;">
 <p>
 Som I har set, har vi været igennem 7 beviser, for regneregler ifm differentiation,
@@ -1366,12 +1324,11 @@ Hver makkerskabsgruppe får tildelt et bevis, og skal efterfølgende udarbejde e
 <p class="fragment (appear)">
 Hvis man kan finde alternative beviser til den pågældende regneregel, og hellere vil bruge dem, er det helt i orden. Det vigtigste er, at I får øvet jer i bevisførelse og mundtlig præsentation.
 </p>
-
 </section>
 </section>
 <section>
-<section id="slide-orgb0c4225" data-background="">
-<h2 id="orgb0c4225">Logaritmisk differentiation</h2>
+<section id="slide-orgaa30608" data-background="">
+<h2 id="orgaa30608">Logaritmisk differentiation</h2>
 <p>
 Hvis funktionen \(f(x)\) er differentiabel og forskellig fra 0 i punktet \(x\), så gælder
 \[\boxed{f'(x) = f(x) \cdot \frac{d}{dx}\left( \ln \left( \lvert f(x) \rvert \right) \right)}\]
@@ -1385,8 +1342,8 @@ Bevis: Anvender kædereglen til at differentiere \(\ln \left( \lvert f(x) \rvert
 Herfra kan \(f'(x)\) isoleres.
 </p>
 </section>
-<section id="slide-org1b434c8" data-background="">
-<h3 id="org1b434c8">Eksempler</h3>
+<section id="slide-org24243ce" data-background="">
+<h3 id="org24243ce">Eksempler</h3>
 <div style="font-size: 60%;">
 <p>
 Vi har funktionen
@@ -1403,10 +1360,9 @@ f'(x) &= f(x) \cdot \frac{d}{dx}\left( \ln \left( \lvert f(x) \rvert \right) \ri
 \end{align*}
 
 </div>
-
 </section>
-<section id="slide-org4defe42" data-background="">
-<h3 id="org4defe42">Opgaver</h3>
+<section id="slide-org4528a21" data-background="">
+<h3 id="org4528a21">Opgaver</h3>
 <div style="font-size: 60%;">
 <p>
 Anvend logaritmisk differentiation til at finde de afledte funktioner
@@ -1420,13 +1376,13 @@ Anvend logaritmisk differentiation til at finde de afledte funktioner
 </section>
 </section>
 <section>
-<section id="slide-orgc41729a" data-background="">
-<h2 id="orgc41729a">Vigtige sætninger for differentiable funktioner</h2>
-<div class="outline-text-2" id="text-orgc41729a">
+<section id="slide-orgd0263e4" data-background="">
+<h2 id="orgd0263e4">Vigtige sætninger for differentiable funktioner</h2>
+<div class="outline-text-2" id="text-orgd0263e4">
 </div>
 </section>
-<section id="slide-org467b048" data-background="">
-<h3 id="org467b048">Rolles sætning</h3>
+<section id="slide-org8ac3dad" data-background="">
+<h3 id="org8ac3dad">Rolles sætning</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <blockquote>
@@ -1446,15 +1402,14 @@ Der findes mindst ét tal \(c\) tilhørende intervallet \(]a\,;\,b[\) hvor \(f'(
 
 <div class="column" style="float:right; width: 50%">
 
-<div id="orga06ee1d" class="figure">
+<div id="org44245fa" class="figure">
 <p><img src="img/2020-09-21_11-04-32_csm_191_fig12_872d0c941d.png" alt="2020-09-21_11-04-32_csm_191_fig12_872d0c941d.png" width="600px" />
 </p>
 </div>
 </div>
-
 </section>
-<section id="slide-orgb5415c0" data-background="">
-<h3 id="orgb5415c0">Middelværdisætningen</h3>
+<section id="slide-org8bb9763" data-background="">
+<h3 id="org8bb9763">Middelværdisætningen</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <blockquote>
@@ -1474,7 +1429,7 @@ Der findes mindst ét tal \(c\) tilhørende intervallet \(]a\,;\,b[\), hvor
 </div>
 <div class="column" style="float:right; width: 50%">
 
-<div id="orgd7b3618" class="figure">
+<div id="org41352c8" class="figure">
 <p><img src="img/2020-09-21_11-06-36_csm_192_fig13_rev_1_81fac563d8.png" alt="2020-09-21_11-06-36_csm_192_fig13_rev_1_81fac563d8.png" width="600px" />
 </p>
 </div>
@@ -1483,10 +1438,9 @@ Der findes mindst ét tal \(c\) tilhørende intervallet \(]a\,;\,b[\), hvor
 
 </ul>
 </div>
-
 </section>
-<section id="slide-org9cfb365" data-background="">
-<h3 id="org9cfb365">Opgave</h3>
+<section id="slide-org43c7af7" data-background="">
+<h3 id="org43c7af7">Opgave</h3>
 <div style="font-size: 60%;">
 <p>
 Anvend middelværdissætningen for \(f(x)=x^3-x+1\) i intervallet \([-2\,;\,2]\) til at bestemme følgende:
@@ -1499,13 +1453,13 @@ Anvend middelværdissætningen for \(f(x)=x^3-x+1\) i intervallet \([-2\,;\,2]\)
 </section>
 </section>
 <section>
-<section id="slide-orga111c7d" data-background="">
-<h2 id="orga111c7d">Tangenter til kurver</h2>
-<div class="outline-text-2" id="text-orga111c7d">
+<section id="slide-org58ce780" data-background="">
+<h2 id="org58ce780">Tangenter til kurver</h2>
+<div class="outline-text-2" id="text-org58ce780">
 </div>
 </section>
-<section id="slide-org7a4b511" data-background="">
-<h3 id="org7a4b511">Bestemmelse af tangent til kurve - et eksempel</h3>
+<section id="slide-org240ae3d" data-background="">
+<h3 id="org240ae3d">Bestemmelse af tangent til kurve - et eksempel</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -1554,8 +1508,8 @@ Kan dette ikke gøres mere generelt?
 Jo da!
 </p>
 </section>
-<section id="slide-orgcd786c4" data-background="">
-<h3 id="orgcd786c4">Generel bestemmelse af tangent til kurve</h3>
+<section id="slide-org6f97323" data-background="">
+<h3 id="org6f97323">Generel bestemmelse af tangent til kurve</h3>
 <div style="font-size: 60%;">
 <p>
 Vi har den differentiable funktion \(f(x)\), og vil gerne finde ligningen for tangenten til kurven gennem punktet \((x_0,f(x_0))\).
@@ -1586,8 +1540,8 @@ t: y &= f'(x_0) \cdot \left(x - x_0\right) + f(x_0)
 
 </div>
 </section>
-<section id="slide-org9eae79c" data-background="">
-<h3 id="org9eae79c">Tangent til kurve</h3>
+<section id="slide-orgc1c057f" data-background="">
+<h3 id="orgc1c057f">Tangent til kurve</h3>
 <div style="font-size: 50%;">
 <div class="column" style="float:left; width: 70%">
 <blockquote>
@@ -1615,19 +1569,19 @@ En differential funktion \(f(x)\) har i punktet \((x_0,f(x_0))\) en tangent til 
 
 <div class="column" style="float:right; width: 30%">
 
-<div id="orgbc38bac" class="figure">
+<div id="orge262ac5" class="figure">
 <p><img src="img/2020-09-21_11-57-58_csm_176_Tangtens_ligning_60b9343e42.png" alt="2020-09-21_11-57-58_csm_176_Tangtens_ligning_60b9343e42.png" width="600px" />
 </p>
 </div>
 </div>
 </section>
-<section id="slide-org8144e8c" data-background="">
-<h3 id="org8144e8c">Opgaver</h3>
-<div class="outline-text-3" id="text-org8144e8c">
+<section id="slide-org66a55dd" data-background="">
+<h3 id="org66a55dd">Opgaver</h3>
+<div class="outline-text-3" id="text-org66a55dd">
 </div>
 </section>
-<section id="slide-orgb6b374b" data-background="">
-<h4 id="orgb6b374b">Obligatorisk</h4>
+<section id="slide-orge7fad18" data-background="">
+<h4 id="orge7fad18">Obligatorisk</h4>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -1674,8 +1628,8 @@ Linjen \(m\) tangerer grafen for \(f\) i punktet \(P(2\,;\,f(2))\).
 </ol>
 </div>
 </section>
-<section id="slide-org1425136" data-background="">
-<h4 id="org1425136">Ekstra</h4>
+<section id="slide-orgf35c58b" data-background="">
+<h4 id="orgf35c58b">Ekstra</h4>
 <div style="font-size: 50%;">
 <div class="column" style="float:left; width: 60%">
 <p>
@@ -1707,7 +1661,7 @@ Vinklen mellem linjen \(g\) og vandret er \(v=135^{\circ}\) som vist.
 
 <div class="column" style="float:right; width: 40%">
 
-<div id="orgccf341e" class="figure">
+<div id="orgf2c23cb" class="figure">
 <p><img src="img/2020-09-21_13-05-58_csm_224_opgave_9-39_202px_593d508d02.png" alt="2020-09-21_13-05-58_csm_224_opgave_9-39_202px_593d508d02.png" width="600px" />
 </p>
 </div>
@@ -1715,8 +1669,8 @@ Vinklen mellem linjen \(g\) og vandret er \(v=135^{\circ}\) som vist.
 </section>
 </section>
 <section>
-<section id="slide-orga395415" data-background="">
-<h2 id="orga395415">Funktionsanalyse og monotoniforhold</h2>
+<section id="slide-org5c69c09" data-background="">
+<h2 id="org5c69c09">Funktionsanalyse og monotoniforhold</h2>
 <div style="font-size: 60%;">
 <p>
 En funktionsanalyse indholder følgende punkter:
@@ -1734,10 +1688,9 @@ En funktionsanalyse indholder følgende punkter:
 <p>
 Vi ser i det følgende på lokale ekstrema, vendetangentpunkter og monotoniforhold, som alle beror på differentialregning. Vi vil også se på asymptoter, da det beror på grænseværdiberegninger.
 </p>
-
 </section>
-<section id="slide-org6afef29" data-background="">
-<h3 id="org6afef29">Lokale ekstrema</h3>
+<section id="slide-org4673ffc" data-background="">
+<h3 id="org4673ffc">Lokale ekstrema</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 60%">
 <blockquote>
@@ -1759,7 +1712,7 @@ For en differentiabel og kontinuert funktion \(f(x)\) gælder der for et punkt \
 
 <div class="column" style="float:right; width: 40%">
 
-<div id="org69b1289" class="figure">
+<div id="org851d459" class="figure">
 <p><img src="img/2020-09-21_13-29-11_csm_182_fig_16_0506_c9ce355b20.png" alt="2020-09-21_13-29-11_csm_182_fig_16_0506_c9ce355b20.png" width="600px" />
 </p>
 </div>
@@ -1772,8 +1725,8 @@ For en differentiabel og kontinuert funktion \(f(x)\) gælder der for et punkt \
 </ul>
 </div>
 </section>
-<section id="slide-org584bc73" data-background="">
-<h3 id="org584bc73">Eksempel</h3>
+<section id="slide-org37518b4" data-background="">
+<h3 id="org37518b4">Eksempel</h3>
 <div style="font-size: 60%;">
 <p>
 Vi ser på funktionen 
@@ -1873,8 +1826,8 @@ Tjekker fortegnene for \(f'(x)\) for repræsentative x-værdier
 Af dette kan det ses, at \((-2,4)\) er lokalt maksimum og \((0,0)\) er lokalt minimum.
 </p>
 </section>
-<section id="slide-orgeaf7fdf" data-background="">
-<h3 id="orgeaf7fdf">Vendetangentpunkter</h3>
+<section id="slide-orge5ec88f" data-background="">
+<h3 id="orge5ec88f">Vendetangentpunkter</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -1888,15 +1841,14 @@ x-koordinaterne til eventuelle vendetangentpunkter findes ved at sætte \(f''(x)
 
 <div class="column" style="float:right; width: 50%">
 
-<div id="org7c30fd1" class="figure">
+<div id="orgbe8733b" class="figure">
 <p><img src="img/2020-09-22_09-08-32_screenshot.png" alt="2020-09-22_09-08-32_screenshot.png" width="600px" />
 </p>
 </div>
 </div>
-
 </section>
-<section id="slide-org60c364a" data-background="">
-<h3 id="org60c364a">Eksempel</h3>
+<section id="slide-org9fcf7a1" data-background="">
+<h3 id="org9fcf7a1">Eksempel</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -1933,8 +1885,8 @@ Så der er ét vendetangentpunkt i \((-1,f(-1))=(-1,2)\).
 </p>
 </div>
 </section>
-<section id="slide-org7122538" data-background="">
-<h3 id="org7122538">Monotoniforhold</h3>
+<section id="slide-org49ae3bc" data-background="">
+<h3 id="org49ae3bc">Monotoniforhold</h3>
 <div style="font-size: 60%;">
 <p>
 Er en beskrivelse af, i hvilke intervaller funktioner er henholdsvis voksende og aftagende.
@@ -1943,10 +1895,9 @@ Er en beskrivelse af, i hvilke intervaller funktioner er henholdsvis voksende og
 <p>
 Anvend tabellen fra bestemmelse af ekstrema til hjælp.
 </p>
-
 </section>
-<section id="slide-org52010ce" data-background="">
-<h3 id="org52010ce">Eksempel</h3>
+<section id="slide-org9af9826" data-background="">
+<h3 id="org9af9826">Eksempel</h3>
 <div style="font-size: 60%;">
 <p>
 Vi fortsætter med
@@ -2018,8 +1969,8 @@ Herfra ses det, at
 
 </ul>
 </section>
-<section id="slide-org9e8fdc8" data-background="">
-<h3 id="org9e8fdc8">Opgave</h3>
+<section id="slide-orgfe43aa2" data-background="">
+<h3 id="orgfe43aa2">Opgave</h3>
 <p>
 Givet funktionen
 \[f(x) = 6x - \frac{1}{2}x^3\]
@@ -2032,10 +1983,9 @@ Givet funktionen
 <li>Tegn graferne for \(f(x)\), \(f'(x)\) og \(f''(x)\) i samme koordinatystem.</li>
 
 </ol>
-
 </section>
-<section id="slide-org9e91457" data-background="">
-<h3 id="org9e91457">Asymptoter</h3>
+<section id="slide-org6a97791" data-background="">
+<h3 id="org6a97791">Asymptoter</h3>
 <div style="font-size: 60%;">
 <dl>
 <dt>Vandret asymptote</dt><dd>Hvis grænseværdien er en konstant værdi, når \(x\to \infty\) eller \(x\to - \infty\). Den konstante værdi siges at være den vandrette asymptote.</dd>
@@ -2043,10 +1993,9 @@ Givet funktionen
 <dt>Skrå asymptote</dt><dd>Hvis grænseværdien for funktionen er en lineær sammenhæng, når \(x \to \infty\) eller \(x \to - \infty\).</dd>
 
 </dl>
-
 </section>
-<section id="slide-org2aa8c29" data-background="">
-<h3 id="org2aa8c29">Eksempel</h3>
+<section id="slide-orgd162ce4" data-background="">
+<h3 id="orgd162ce4">Eksempel</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -2076,15 +2025,14 @@ Tjekker \(Dm(f)\).
 
 </ul>
 
-<div id="orgb16693e" class="figure">
+<div id="orgf452b32" class="figure">
 <p><img src="img/2020-09-22_09-51-53_csm_186_Fig-9-26_387_5904462edf.png" alt="2020-09-22_09-51-53_csm_186_Fig-9-26_387_5904462edf.png" class="fragment (appear)" />
 </p>
 </div>
 </div>
-
 </section>
-<section id="slide-org5995d3b" data-background="">
-<h3 id="org5995d3b">Opgave</h3>
+<section id="slide-org6f30c2e" data-background="">
+<h3 id="org6f30c2e">Opgave</h3>
 <p>
 Givet er funktionen
 </p>
@@ -2102,8 +2050,8 @@ Givet er funktionen
 </section>
 </section>
 <section>
-<section id="slide-org752d52d" data-background="">
-<h2 id="org752d52d">Kurvetilpasning</h2>
+<section id="slide-org91543a9" data-background="">
+<h2 id="org91543a9">Kurvetilpasning</h2>
 <div style="font-size: 60%;">
 <p>
 Vi vil gerne lade to (eller flere) funktioner glide "naturligt" over i hinanden.
@@ -2112,8 +2060,8 @@ Vi vil gerne lade to (eller flere) funktioner glide "naturligt" over i hinanden.
 De to funktioner skal altså have samme hældning i overgangspunktet.
 </p>
 </section>
-<section id="slide-org5da95b3" data-background="">
-<h3 id="org5da95b3">Eksempel</h3>
+<section id="slide-orgcd864ab" data-background="">
+<h3 id="orgcd864ab">Eksempel</h3>
 <div style="font-size: 60%;">
 <div class="column" style="float:left; width: 50%">
 <p>
@@ -2196,15 +2144,14 @@ Grafisk ser det således ud:
 </p>
 
 
-<div id="org960b083" class="figure">
+<div id="org12a0fb4" class="figure">
 <p><img src="img/2020-09-22_15-41-17_screenshot.png" alt="2020-09-22_15-41-17_screenshot.png" width="600px" />
 </p>
 </div>
 </div>
-
 </section>
-<section id="slide-org7d45600" data-background="">
-<h3 id="org7d45600">Opgave</h3>
+<section id="slide-org9d68599" data-background="">
+<h3 id="org9d68599">Opgave</h3>
 <div style="font-size: 50%;">
 <div class="column" style="float:left; width: 60%">
 <p>
@@ -2230,7 +2177,7 @@ Alle mål er i meter.
 
 <div class="column" style="float:right; width: 40%">
 
-<div id="org4a798ad" class="figure">
+<div id="org184b833" class="figure">
 <p><img src="img/2020-09-22_15-43-00_screenshot.png" alt="2020-09-22_15-43-00_screenshot.png" width="600px" />
 </p>
 </div>
@@ -2238,8 +2185,8 @@ Alle mål er i meter.
 </section>
 </section>
 <section>
-<section id="slide-orgd9aac98" data-background="">
-<h2 id="orgd9aac98">Optimering</h2>
+<section id="slide-orgbb5d9ab" data-background="">
+<h2 id="orgbb5d9ab">Optimering</h2>
 <div style="font-size: 60%;">
 <ul>
 <li>Opstil matematiske modeller over problemet.</li>
@@ -2248,13 +2195,12 @@ Alle mål er i meter.
 <li>Undersøg om der er tale om et maks eller min.</li>
 
 </ul>
-
 </section>
-<section id="slide-orgf6ca726" data-background="">
-<h3 id="orgf6ca726">Eksempel</h3>
+<section id="slide-org0b10419" data-background="">
+<h3 id="org0b10419">Eksempel</h3>
 <div style="font-size: 50%;">
 
-<div id="org8e4590d" class="figure">
+<div id="org728f23e" class="figure">
 <p><img src="img/2020-09-22_16-07-16_screenshot.png" alt="2020-09-22_16-07-16_screenshot.png" width="600px" />
 </p>
 </div>
@@ -2318,18 +2264,17 @@ P'(200) &= 4- \frac{64000}{200^2} = 2.4
 <li class="fragment appear">Den optimale pris på hegnet er \[P(126.49) = 4\cdot 126.49 +\frac{64000}{126.49} = 1011.92\]</li>
 
 </ul>
-
 </section>
-<section id="slide-org667373a" data-background="">
-<h3 id="org667373a">Opgaver</h3>
+<section id="slide-org56763b2" data-background="">
+<h3 id="org56763b2">Opgaver</h3>
 
-<div id="org477aae8" class="figure">
+<div id="org7feb47a" class="figure">
 <p><img src="img/2020-09-16_07-47-26_screenshot.png" alt="2020-09-16_07-47-26_screenshot.png" width="600px" />
 </p>
 </div>
 
 
-<div id="org975e480" class="figure">
+<div id="org6633370" class="figure">
 <p><img src="img/2020-09-16_07-48-04_screenshot.png" alt="2020-09-16_07-48-04_screenshot.png" width="600px" />
 </p>
 </div>
@@ -2338,19 +2283,18 @@ P'(200) &= 4- \frac{64000}{200^2} = 2.4
 <section data-background="">
 
 
-<div id="org8d1ac8f" class="figure">
+<div id="org914b403" class="figure">
 <p><img src="img/2020-09-16_07-49-02_screenshot.png" alt="2020-09-16_07-49-02_screenshot.png" width="600px" />
 </p>
 </div>
-
 </section>
 </section>
 <section>
-<section id="slide-org186251b" data-background="">
-<h2 id="org186251b">Holmenkollbakken</h2>
+<section id="slide-orge8ecc47" data-background="">
+<h2 id="orge8ecc47">Holmenkollbakken</h2>
 <div class="column" style="float:left; width: 50%">
 
-<div id="orgdb3102d" class="figure">
+<div id="orga45e6e8" class="figure">
 <p><img src="img/2020-10-20_08-01-20_screenshot.png" alt="2020-10-20_08-01-20_screenshot.png" width="350px" />
 </p>
 </div>
@@ -2358,7 +2302,7 @@ P'(200) &= 4- \frac{64000}{200^2} = 2.4
 
 <div class="column" style="float:right; width: 50%">
 
-<div id="org60ebb88" class="figure">
+<div id="orgc8cd156" class="figure">
 <p><img src="img/2020-10-20_08-03-46_screenshot.png" alt="2020-10-20_08-03-46_screenshot.png" width="350px" />
 </p>
 </div>
@@ -2368,7 +2312,7 @@ P'(200) &= 4- \frac{64000}{200^2} = 2.4
 <section data-background="">
 <div class="column" style="float:left; width: 50%">
 
-<div id="org20fd631" class="figure">
+<div id="org99aa0ce" class="figure">
 <p><img src="img/2020-10-20_08-04-19_screenshot.png" alt="2020-10-20_08-04-19_screenshot.png" width="400px" />
 </p>
 </div>
@@ -2376,17 +2320,16 @@ P'(200) &= 4- \frac{64000}{200^2} = 2.4
 
 <div class="column" style="float:right; width: 50%">
 
-<div id="org45951ce" class="figure">
+<div id="org5444956" class="figure">
 <p><img src="img/2020-10-20_08-04-48_screenshot.png" alt="2020-10-20_08-04-48_screenshot.png" width="400px" />
 </p>
 </div>
 </div>
-
 </section>
 </section>
 <section>
-<section id="slide-org668da7e" data-background="">
-<h2 id="org668da7e">5 min fordybelse</h2>
+<section id="slide-org39e0264" data-background="">
+<h2 id="org39e0264">5 min fordybelse</h2>
 <ul>
 <li>Nedskriv dine egne refleksioner over dagens undervisning.</li>
 <li>Foregår i tavshed.</li>
@@ -2410,7 +2353,7 @@ controls: true,
 progress: true,
 history: false,
 center: false,
-slideNumber: 'c/t',
+slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
 mouseWheel: false,
