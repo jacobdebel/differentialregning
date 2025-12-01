@@ -421,7 +421,7 @@ Differenskvotienten er også /gennemsnitshældningen/ for grafen mellem to punkt
 #+reveal_html: </div>
 
 #+reveal_html: <div class="column" style="float:right; width: 50%">
-[[./Sekanter_og_tangenter.ggb][file:img/2020-09-10_09-11-51_screenshot.png]]
+[[./ggb/Sekanter_og_tangenter.ggb][file:img/2020-09-10_09-11-51_screenshot.png]]
 #+reveal_html: </div>
 ** Differentialkvotient
 #+reveal_html: <div style="font-size: 60%;">
@@ -686,7 +686,7 @@ $$1 \cdot \left( 1 + \frac{1}{n} \right)^n$$ Renten udgør nu en n'te-del mens a
 Hvad sker der, når $n$ vokser?
 
 #+attr_html: :width 600px
-[[./Eulers_tal_som_graensevaerdi.ggb][file:img/2020-09-15_13-07-02_screenshot.png]]
+[[./ggb/Eulers_tal_som_graensevaerdi.ggb][file:img/2020-09-15_13-07-02_screenshot.png]]
 
 *** Eulers tal - fortsat
 #+reveal_html: <div style="font-size: 60%;">
